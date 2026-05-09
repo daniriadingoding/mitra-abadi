@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#006291",
+                        "outline": "#926e6b",
+                        "secondary": "#5f5e5e",
+                        "on-background": "#1a1c1c",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#fffdff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#410002",
+                        "surface-container-low": "#f3f3f3",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#e4e2e1",
+                        "on-tertiary-container": "#fefdff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "inverse-surface": "#2f3131",
+                        "inverse-primary": "#ffb4ac",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#cbe6ff",
+                        "surface-dim": "#dadada",
+                        "surface-container-highest": "#e2e2e2",
+                        "primary-container": "#e61e25",
+                        "surface-container": "#eeeeee",
+                        "on-primary": "#ffffff",
+                        "surface": "#f9f9f9",
+                        "on-primary-fixed-variant": "#93000d",
+                        "background": "#f9f9f9",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "primary-fixed": "#ffdad6",
+                        "on-secondary-container": "#656464",
+                        "primary": "#bd0015",
+                        "surface-tint": "#c00015",
+                        "tertiary-fixed-dim": "#8ecdff",
+                        "secondary-container": "#e4e2e1",
+                        "on-tertiary-fixed": "#001e30",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-surface-variant": "#5d3f3c",
+                        "surface-bright": "#f9f9f9",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#004b71",
+                        "tertiary-container": "#007cb6",
+                        "primary-fixed-dim": "#ffb4ac",
+                        "outline-variant": "#e7bdb8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col md:flex-row overflow-hidden">
+<!-- Sidebar Navigation (Desktop) -->
+<aside class="hidden md:flex flex-col h-screen w-64 border-r border-zinc-100 bg-zinc-50 py-6 shrink-0">
+<div class="px-8 mb-10">
+<h1 class="text-sm font-black text-zinc-900 tracking-tighter">Digital Curator</h1>
+<p class="font-manrope uppercase tracking-widest text-[10px] font-semibold text-zinc-400 mt-1">Heritage Textile Archive</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Active State Dashboard -->
+<a class="flex items-center px-8 py-3 text-red-600 border-r-2 border-red-600 bg-red-50/50 transition-all ease-out" href="#">
+<span class="material-symbols-outlined mr-4 text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="font-manrope uppercase tracking-widest text-[10px] font-semibold">Dashboard</span>
+</a>
+<a class="flex items-center px-8 py-3 text-zinc-400 hover:text-zinc-900 hover:bg-zinc-100 transition-all ease-out" href="#">
+<span class="material-symbols-outlined mr-4 text-[20px]" data-icon="inventory_2">inventory_2</span>
+<span class="font-manrope uppercase tracking-widest text-[10px] font-semibold">Inventory</span>
+</a>
+<a class="flex items-center px-8 py-3 text-zinc-400 hover:text-zinc-900 hover:bg-zinc-100 transition-all ease-out" href="#">
+<span class="material-symbols-outlined mr-4 text-[20px]" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-manrope uppercase tracking-widest text-[10px] font-semibold">Orders</span>
+</a>
+<a class="flex items-center px-8 py-3 text-zinc-400 hover:text-zinc-900 hover:bg-zinc-100 transition-all ease-out" href="#">
+<span class="material-symbols-outlined mr-4 text-[20px]" data-icon="group">group</span>
+<span class="font-manrope uppercase tracking-widest text-[10px] font-semibold">Customers</span>
+</a>
+<a class="flex items-center px-8 py-3 text-zinc-400 hover:text-zinc-900 hover:bg-zinc-100 transition-all ease-out" href="#">
+<span class="material-symbols-outlined mr-4 text-[20px]" data-icon="analytics">analytics</span>
+<span class="font-manrope uppercase tracking-widest text-[10px] font-semibold">Reports</span>
+</a>
+</nav>
+<div class="px-8 mt-auto">
+<button class="w-full bg-primary-container text-on-primary py-3 text-[10px] font-bold uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all">
+                Add New Specimen
+            </button>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 flex flex-col h-screen overflow-hidden bg-background">
+<!-- Top App Bar -->
+<header class="w-full sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-100 shadow-[0_12px_40px_rgba(26,28,28,0.06)] flex justify-between items-center px-8 h-16 shrink-0">
+<div class="flex items-center gap-6">
+<h2 class="text-lg font-bold tracking-tighter text-zinc-900">Operational Overview</h2>
+<div class="hidden lg:flex items-center bg-zinc-50 px-4 py-2 border-b border-zinc-200">
+<span class="material-symbols-outlined text-zinc-400 text-sm mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm font-manrope placeholder:text-zinc-400 w-64" placeholder="Search archive..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-zinc-500 hover:bg-zinc-50 rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-zinc-100">
+<div class="text-right hidden sm:block">
+<p class="text-[10px] font-bold uppercase tracking-widest text-zinc-900">Curator Admin</p>
+<p class="text-[10px] text-zinc-400">Inventory Lead</p>
+</div>
+<span class="material-symbols-outlined text-zinc-400 text-3xl" data-icon="account_circle" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-8 space-y-8">
+<!-- Metrics Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Sales Metric -->
+<div class="bg-white p-6 shadow-[0_12px_40px_rgba(26,28,28,0.06)] border-b-2 border-transparent hover:border-primary transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-zinc-50 flex items-center justify-center group-hover:bg-red-50 transition-colors">
+<span class="material-symbols-outlined text-zinc-400 group-hover:text-primary" data-icon="payments">payments</span>
+</div>
+<span class="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="trending_up">trending_up</span>
+                            +12.4%
+                        </span>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-1">Total Sales (Monthly)</p>
+<h3 class="text-2xl font-extrabold tracking-tight text-zinc-900">IDR 1.248.000.000</h3>
+</div>
+<!-- Active Orders Metric -->
+<div class="bg-white p-6 shadow-[0_12px_40px_rgba(26,28,28,0.06)] border-b-2 border-transparent hover:border-primary transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-zinc-50 flex items-center justify-center group-hover:bg-red-50 transition-colors">
+<span class="material-symbols-outlined text-zinc-400 group-hover:text-primary" data-icon="local_shipping">local_shipping</span>
+</div>
+<span class="text-[10px] font-bold text-zinc-600 bg-zinc-50 px-2 py-1">In Pipeline</span>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-1">Active Orders</p>
+<h3 class="text-2xl font-extrabold tracking-tight text-zinc-900">42 Transactions</h3>
+</div>
+<!-- Low Stock Metric -->
+<div class="bg-white p-6 shadow-[0_12px_40px_rgba(26,28,28,0.06)] border-b-2 border-transparent hover:border-primary transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-zinc-50 flex items-center justify-center group-hover:bg-red-50 transition-colors">
+<span class="material-symbols-outlined text-zinc-400 group-hover:text-primary" data-icon="warning">warning</span>
+</div>
+<span class="text-[10px] font-bold text-red-600 bg-red-50 px-2 py-1">Action Required</span>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-1">Low Stock Alerts</p>
+<h3 class="text-2xl font-extrabold tracking-tight text-zinc-900">8 Critical Items</h3>
+</div>
+</section>
+<!-- Main Layout: Table + Sidebar -->
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Order Pipeline -->
+<section class="lg:w-2/3 bg-white shadow-[0_12px_40px_rgba(26,28,28,0.06)] overflow-hidden">
+<div class="px-6 py-6 border-b border-zinc-100 flex justify-between items-center">
+<div>
+<h4 class="text-sm font-bold tracking-tight text-zinc-900">Recent Order Pipeline</h4>
+<p class="text-xs text-zinc-400 mt-1">Real-time tracking of textile fulfillment</p>
+</div>
+<button class="text-[10px] font-bold uppercase tracking-widest text-primary hover:underline">View All Orders</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-zinc-50">
+<tr>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-zinc-400">Order ID</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-zinc-400">Customer Name</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-zinc-400">Category</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-zinc-400">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-zinc-50">
+<tr class="hover:bg-zinc-50 transition-colors">
+<td class="px-6 py-4 text-xs font-bold text-zinc-900">#MA-9842</td>
+<td class="px-6 py-4 text-xs text-zinc-600">Alexander Wijaya</td>
+<td class="px-6 py-4 text-xs text-zinc-500">Premium Silk</td>
+<td class="px-6 py-4">
+<span class="text-[9px] font-bold px-2 py-1 bg-green-50 text-green-700 uppercase tracking-tighter">SHIPPED</span>
+</td>
+</tr>
+<tr class="hover:bg-zinc-50 transition-colors">
+<td class="px-6 py-4 text-xs font-bold text-zinc-900">#MA-9843</td>
+<td class="px-6 py-4 text-xs text-zinc-600">Hotel Mulia Jakarta</td>
+<td class="px-6 py-4 text-xs text-zinc-500">Heavy Linen</td>
+<td class="px-6 py-4">
+<span class="text-[9px] font-bold px-2 py-1 bg-yellow-50 text-yellow-700 uppercase tracking-tighter">PROCESSING</span>
+</td>
+</tr>
+<tr class="hover:bg-zinc-50 transition-colors">
+<td class="px-6 py-4 text-xs font-bold text-zinc-900">#MA-9845</td>
+<td class="px-6 py-4 text-xs text-zinc-600">Boutique Solo</td>
+<td class="px-6 py-4 text-xs text-zinc-500">Batik Cap Sogan</td>
+<td class="px-6 py-4">
+<span class="text-[9px] font-bold px-2 py-1 bg-red-50 text-red-700 uppercase tracking-tighter">PENDING PAYMENT</span>
+</td>
+</tr>
+<tr class="hover:bg-zinc-50 transition-colors">
+<td class="px-6 py-4 text-xs font-bold text-zinc-900">#MA-9848</td>
+<td class="px-6 py-4 text-xs text-zinc-600">Suryo Architecture</td>
+<td class="px-6 py-4 text-xs text-zinc-500">Upholstery Velvet</td>
+<td class="px-6 py-4">
+<span class="text-[9px] font-bold px-2 py-1 bg-yellow-50 text-yellow-700 uppercase tracking-tighter">PROCESSING</span>
+</td>
+</tr>
+<tr class="hover:bg-zinc-50 transition-colors">
+<td class="px-6 py-4 text-xs font-bold text-zinc-900">#MA-9850</td>
+<td class="px-6 py-4 text-xs text-zinc-600">Ratna Sartika</td>
+<td class="px-6 py-4 text-xs text-zinc-500">Traditional Ikat</td>
+<td class="px-6 py-4">
+<span class="text-[9px] font-bold px-2 py-1 bg-green-50 text-green-700 uppercase tracking-tighter">SHIPPED</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Stock Alerts Sidebar -->
+<aside class="lg:w-1/3 flex flex-col gap-6">
+<div class="bg-zinc-900 text-white p-6 shadow-[0_12px_40px_rgba(26,28,28,0.12)]">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="inventory">inventory</span>
+<h4 class="text-sm font-bold uppercase tracking-widest">Critical Stock Alerts</h4>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-start border-b border-zinc-800 pb-4">
+<div>
+<p class="text-xs font-bold text-white">Crimson Velvet Roll</p>
+<p class="text-[10px] text-zinc-500 mt-0.5">Ref: #CV-2024</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-primary">2 Rolls Left</p>
+<p class="text-[10px] text-zinc-500 mt-0.5">4.2m Total</p>
+</div>
+</div>
+<div class="flex justify-between items-start border-b border-zinc-800 pb-4">
+<div>
+<p class="text-xs font-bold text-white">Midnight Indigo Batik</p>
+<p class="text-[10px] text-zinc-500 mt-0.5">Ref: #BT-0092</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-primary">0.5 Rolls Left</p>
+<p class="text-[10px] text-zinc-500 mt-0.5">1.5m Total</p>
+</div>
+</div>
+<div class="flex justify-between items-start border-b border-zinc-800 pb-4">
+<div>
+<p class="text-xs font-bold text-white">Golden Thread Organza</p>
+<p class="text-[10px] text-zinc-500 mt-0.5">Ref: #GO-1123</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-primary">1 Roll Left</p>
+<p class="text-[10px] text-zinc-500 mt-0.5">8.0m Total</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 bg-primary-container text-on-primary py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[14px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+                            Generate Purchase Orders
+                        </button>
+</div>
+<!-- Asymmetrical Design Element: Featured Specimen Preview -->
+<div class="bg-white p-2 shadow-[0_12px_40px_rgba(26,28,28,0.06)] relative overflow-hidden group">
+<img alt="Textile pattern" class="w-full h-48 object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="Close-up photograph of high-end luxury crimson velvet fabric with deep shadows and soft highlights showing rich texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-szcI80N86zKs2T4nQxYV89FXEk01GP8Vw9vUGYUKWtvlaKSbkjdqdYoTQ0chBJD_evKteqPJco-qt3sDEdfmOb5A-9mWzvNU6G8WsFZHAe0xR2vwHVqk93fgBqljSa-4nA-Im4lgYxhXpmaPFzst1LUxka8E3XaGLwEVtRZKBJCZYtzUSOx-HyKCYM-MME2WOBKsRlSFXrzuE0gMK4_sn-8D5tor25kppb_xSqKeJOEMp90HGDkBPxdDUxtfdPxBNGFzAm-kPHGA"/>
+<div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4">
+<p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">New Arrival</p>
+<h5 class="text-xs font-extrabold text-zinc-900 uppercase">Hand-woven Javanese Silk</h5>
+</div>
+</div>
+</aside>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-8 bg-zinc-50 border-t border-zinc-100 mt-auto shrink-0">
+<div class="flex justify-between items-center px-8 max-w-7xl mx-auto">
+<p class="font-manrope text-xs text-zinc-400">© 2024 Mitra Abadi Textile Archive.</p>
+<div class="flex gap-8">
+<a class="font-manrope text-xs text-zinc-500 hover:text-red-500 transition-colors opacity-80 hover:opacity-100" href="#">Sustainability</a>
+<a class="font-manrope text-xs text-zinc-500 hover:text-red-500 transition-colors opacity-80 hover:opacity-100" href="#">WhatsApp Support</a>
+</div>
+</div>
+</footer>
+</main>
+<!-- Mobile Bottom Navigation Shell -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-xl border-t border-zinc-100 flex justify-around items-center h-16 z-[100]">
+<a class="flex flex-col items-center justify-center text-red-600 font-bold" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="text-[9px] uppercase tracking-tighter mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="inventory_2">inventory_2</span>
+<span class="text-[9px] uppercase tracking-tighter mt-1">Inventory</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_cart">shopping_cart</span>
+<span class="text-[9px] uppercase tracking-tighter mt-1">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="analytics">analytics</span>
+<span class="text-[9px] uppercase tracking-tighter mt-1">Reports</span>
+</a>
+</nav>
+</body></html>

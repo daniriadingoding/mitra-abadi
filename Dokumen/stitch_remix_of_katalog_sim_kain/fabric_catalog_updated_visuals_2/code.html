@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mitra Abadi | Fabric Catalog</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Font: Manrope -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandRed: '#E61E25',
+            brandGray: '#F5F5F5',
+            textMain: '#1A1A1A',
+            textLight: '#666666'
+          },
+          fontFamily: {
+            manrope: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-styling">
+    body {
+      font-family: 'Manrope', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .custom-checkbox:checked {
+      background-color: #E61E25;
+      border-color: #E61E25;
+    }
+    .badge-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+    }
+    .spec-label {
+      font-size: 0.6rem;
+      color: #999;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .spec-value {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1A1A1A;
+    }
+    /* Simple animation for the chat menu */
+    #chat-menu {
+      animation: slideUp 0.3s ease-out forwards;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(10px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+  </style>
+</head>
+<body class="bg-white text-textMain">
+<!-- BEGIN: Header -->
+<header class="border-b border-gray-100 py-6 px-8 flex items-center justify-between sticky top-0 bg-white z-40">
+<div class="flex items-center gap-12">
+<!-- Logo -->
+<a class="text-brandRed font-extrabold text-2xl tracking-tight" href="#">Mitra Abadi</a>
+<!-- Navigation -->
+<nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-textLight">
+<a class="text-brandRed border-b-2 border-brandRed pb-1" href="#">Catalog</a>
+<a class="hover:text-brandRed transition-colors" href="#">About</a>
+<a class="hover:text-brandRed transition-colors" href="#">Contact</a>
+</nav>
+</div>
+<!-- Header Actions -->
+<div class="flex items-center gap-6">
+<div class="relative hidden sm:block">
+<input class="bg-gray-100 border-none rounded-full py-2 px-6 pr-10 text-xs w-64 focus:ring-1 focus:ring-brandRed" placeholder="Search archives..." type="text"/>
+<svg class="w-4 h-4 absolute right-4 top-2 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<button class="text-gray-600 hover:text-brandRed">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<button class="text-gray-600 hover:text-brandRed">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: Hero Section -->
+<main class="max-w-7xl mx-auto px-8 pt-12 pb-20">
+<div class="mb-12">
+<span class="text-brandRed font-bold text-[10px] tracking-widest uppercase block mb-4">Premium Textile Archivist</span>
+<h1 class="text-6xl font-extrabold tracking-tight mb-6">The Fabric Catalog</h1>
+<p class="text-textLight max-w-xl text-sm leading-relaxed">
+        A curated collection of high-performance textiles, from heavy-duty industrial knits to soft-touch sustainable cottons.
+      </p>
+</div>
+<!-- BEGIN: Layout Container -->
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- BEGIN: Sidebar Filters -->
+<aside class="w-full lg:w-64 flex-shrink-0">
+<div class="mb-8">
+<h3 class="text-[10px] font-bold tracking-widest text-textMain mb-6 uppercase border-b pb-2">Technical Specs</h3>
+<div class="space-y-4">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-gray-300 text-brandRed focus:ring-brandRed custom-checkbox" type="checkbox"/>
+<span class="text-[11px] font-bold text-gray-500 uppercase tracking-wide group-hover:text-brandRed">Sustainable / Organic</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-gray-300 text-brandRed focus:ring-brandRed custom-checkbox" type="checkbox"/>
+<span class="text-[11px] font-bold text-gray-500 uppercase tracking-wide group-hover:text-brandRed">Industrial Grade</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-gray-300 text-brandRed focus:ring-brandRed custom-checkbox" type="checkbox"/>
+<span class="text-[11px] font-bold text-gray-500 uppercase tracking-wide group-hover:text-brandRed">Limited Production</span>
+</label>
+</div>
+</div>
+</aside>
+<!-- END: Sidebar Filters -->
+<!-- BEGIN: Product Area -->
+<div class="flex-1">
+<!-- Category Toggles -->
+<div class="flex flex-wrap gap-2 mb-12 justify-end">
+<button class="bg-brandRed text-white text-[10px] font-bold uppercase tracking-widest px-6 py-2.5 rounded-sm shadow-sm">All Materials</button>
+<button class="bg-gray-100 text-gray-500 text-[10px] font-bold uppercase tracking-widest px-6 py-2.5 rounded-sm hover:bg-gray-200 transition-colors">Cotton</button>
+<button class="bg-gray-100 text-gray-500 text-[10px] font-bold uppercase tracking-widest px-6 py-2.5 rounded-sm hover:bg-gray-200 transition-colors">Linen</button>
+<button class="bg-gray-100 text-gray-500 text-[10px] font-bold uppercase tracking-widest px-6 py-2.5 rounded-sm hover:bg-gray-200 transition-colors">Knit</button>
+<button class="bg-gray-100 text-gray-500 text-[10px] font-bold uppercase tracking-widest px-6 py-2.5 rounded-sm hover:bg-gray-200 transition-colors">Specialty</button>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
+<!-- Product Card 1 -->
+<div class="group cursor-pointer" data-purpose="product-card">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden bg-gray-100">
+<img alt="Cotton Combed 30s" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/ADBb0ujM3yZ73aXLWF_x6ZLvCimCqZC6Q7zX4CYjBwF4kbbAKmzTG_aH5AOkfbQhR65LfBbq0ipHaXirFZFU3C1kHG8qp2YqV7by_Pt9j1cz8rSf3uzymytkvJMKDiD2KVjYbYzSC-M6G-8omcfWu3Qin-7KCApEUZszv0C7NulsRqepC-s-NkPU9u-rABYBpdGw1XlnFqV9Kda6ngGJmtib-eGyXz9PdGbWYn_FUy7zNYyn-Uu5fOcKC-hReYGeCCsdZQE2IyT_uqLuVBY"/>
+<div class="absolute top-4 left-4 bg-white text-brandRed px-2 py-1 badge-label uppercase">Core Stock</div>
+</div>
+<div class="flex justify-between items-baseline mb-4">
+<h4 class="font-bold text-lg">Cotton Combed 30s</h4>
+<span class="text-brandRed font-bold">$12.50</span>
+</div>
+<div class="grid grid-cols-3 gap-2 border-t pt-4">
+<div><div class="spec-label">Weight</div><div class="spec-value">180 GSM</div></div>
+<div><div class="spec-label">Width</div><div class="spec-value">72"</div></div>
+<div><div class="spec-label">Ref ID</div><div class="spec-value">MA-CT-30S</div></div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer" data-purpose="product-card">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden bg-gray-100">
+<img alt="Vintage Washed Linen" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/ADBb0ujM3yZ73aXLWF_x6ZLvCimCqZC6Q7zX4CYjBwF4kbbAKmzTG_aH5AOkfbQhR65LfBbq0ipHaXirFZFU3C1kHG8qp2YqV7by_Pt9j1cz8rSf3uzymytkvJMKDiD2KVjYbYzSC-M6G-8omcfWu3Qin-7KCApEUZszv0C7NulsRqepC-s-NkPU9u-rABYBpdGw1XlnFqV9Kda6ngGJmtib-eGyXz9PdGbWYn_FUy7zNYyn-Uu5fOcKC-hReYGeCCsdZQE2IyT_uqLuVBY"/>
+<div class="absolute top-4 left-4 bg-brandRed text-white px-2 py-1 badge-label uppercase">Premium Archive</div>
+</div>
+<div class="flex justify-between items-baseline mb-4">
+<h4 class="font-bold text-lg">Vintage Washed Linen</h4>
+<span class="text-brandRed font-bold">$24.00</span>
+</div>
+<div class="grid grid-cols-3 gap-2 border-t pt-4">
+<div><div class="spec-label">Weight</div><div class="spec-value">210 GSM</div></div>
+<div><div class="spec-label">Width</div><div class="spec-value">58"</div></div>
+<div><div class="spec-label">Ref ID</div><div class="spec-value">MA-LN-VW</div></div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group cursor-pointer" data-purpose="product-card">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden bg-gray-100">
+<img alt="Tech-Jersey Sport" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/ADBb0ujM3yZ73aXLWF_x6ZLvCimCqZC6Q7zX4CYjBwF4kbbAKmzTG_aH5AOkfbQhR65LfBbq0ipHaXirFZFU3C1kHG8qp2YqV7by_Pt9j1cz8rSf3uzymytkvJMKDiD2KVjYbYzSC-M6G-8omcfWu3Qin-7KCApEUZszv0C7NulsRqepC-s-NkPU9u-rABYBpdGw1XlnFqV9Kda6ngGJmtib-eGyXz9PdGbWYn_FUy7zNYyn-Uu5fOcKC-hReYGeCCsdZQE2IyT_uqLuVBY"/>
+<div class="absolute top-4 left-4 bg-gray-800 text-white px-2 py-1 badge-label uppercase">High-Stretch</div>
+</div>
+<div class="flex justify-between items-baseline mb-4">
+<h4 class="font-bold text-lg">Tech-Jersey Sport</h4>
+<span class="text-brandRed font-bold">$18.25</span>
+</div>
+<div class="grid grid-cols-3 gap-2 border-t pt-4">
+<div><div class="spec-label">Weight</div><div class="spec-value">240 GSM</div></div>
+<div><div class="spec-label">Width</div><div class="spec-value">60"</div></div>
+<div><div class="spec-label">Ref ID</div><div class="spec-value">MA-KN-TJ</div></div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group cursor-pointer" data-purpose="product-card">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden bg-gray-100">
+<img alt="Mulberry Silk Satin" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/ADBb0ujM3yZ73aXLWF_x6ZLvCimCqZC6Q7zX4CYjBwF4kbbAKmzTG_aH5AOkfbQhR65LfBbq0ipHaXirFZFU3C1kHG8qp2YqV7by_Pt9j1cz8rSf3uzymytkvJMKDiD2KVjYbYzSC-M6G-8omcfWu3Qin-7KCApEUZszv0C7NulsRqepC-s-NkPU9u-rABYBpdGw1XlnFqV9Kda6ngGJmtib-eGyXz9PdGbWYn_FUy7zNYyn-Uu5fOcKC-hReYGeCCsdZQE2IyT_uqLuVBY"/>
+</div>
+<div class="flex justify-between items-baseline mb-4">
+<h4 class="font-bold text-lg">Mulberry Silk Satin</h4>
+<span class="text-brandRed font-bold">$45.00</span>
+</div>
+<div class="grid grid-cols-3 gap-2 border-t pt-4">
+<div><div class="spec-label">Weight</div><div class="spec-value">85 GSM</div></div>
+<div><div class="spec-label">Width</div><div class="spec-value">44"</div></div>
+<div><div class="spec-label">Ref ID</div><div class="spec-value">MA-SK-MB</div></div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group cursor-pointer" data-purpose="product-card">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden bg-gray-100">
+<img alt="Raw Selvedge Denim" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/ADBb0ujM3yZ73aXLWF_x6ZLvCimCqZC6Q7zX4CYjBwF4kbbAKmzTG_aH5AOkfbQhR65LfBbq0ipHaXirFZFU3C1kHG8qp2YqV7by_Pt9j1cz8rSf3uzymytkvJMKDiD2KVjYbYzSC-M6G-8omcfWu3Qin-7KCApEUZszv0C7NulsRqepC-s-NkPU9u-rABYBpdGw1XlnFqV9Kda6ngGJmtib-eGyXz9PdGbWYn_FUy7zNYyn-Uu5fOcKC-hReYGeCCsdZQE2IyT_uqLuVBY"/>
+<div class="absolute bottom-4 right-4 bg-brandRed text-white px-2 py-1 badge-label uppercase">Low Stock</div>
+</div>
+<div class="flex justify-between items-baseline mb-4">
+<h4 class="font-bold text-lg">Raw Selvedge Denim</h4>
+<span class="text-brandRed font-bold">$21.80</span>
+</div>
+<div class="grid grid-cols-3 gap-2 border-t pt-4">
+<div><div class="spec-label">Weight</div><div class="spec-value">14.5 OZ</div></div>
+<div><div class="spec-label">Width</div><div class="spec-value">32"</div></div>
+<div><div class="spec-label">Ref ID</div><div class="spec-value">MA-DN-RS</div></div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group cursor-pointer" data-purpose="product-card">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden bg-gray-100">
+<img alt="Eco-Jersey Organic" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/ADBb0ujM3yZ73aXLWF_x6ZLvCimCqZC6Q7zX4CYjBwF4kbbAKmzTG_aH5AOkfbQhR65LfBbq0ipHaXirFZFU3C1kHG8qp2YqV7by_Pt9j1cz8rSf3uzymytkvJMKDiD2KVjYbYzSC-M6G-8omcfWu3Qin-7KCApEUZszv0C7NulsRqepC-s-NkPU9u-rABYBpdGw1XlnFqV9Kda6ngGJmtib-eGyXz9PdGbWYn_FUy7zNYyn-Uu5fOcKC-hReYGeCCsdZQE2IyT_uqLuVBY"/>
+</div>
+<div class="flex justify-between items-baseline mb-4">
+<h4 class="font-bold text-lg">Eco-Jersey Organic</h4>
+<span class="text-brandRed font-bold">$15.40</span>
+</div>
+<div class="grid grid-cols-3 gap-2 border-t pt-4">
+<div><div class="spec-label">Weight</div><div class="spec-value">160 GSM</div></div>
+<div><div class="spec-label">Width</div><div class="spec-value">68"</div></div>
+<div><div class="spec-label">Ref ID</div><div class="spec-value">MA-EC-OR</div></div>
+</div>
+</div>
+</div>
+<!-- Load More Button -->
+<div class="mt-20 flex justify-center">
+<button class="bg-white border border-gray-200 text-[10px] font-extrabold uppercase tracking-widest px-10 py-4 flex items-center gap-4 hover:border-brandRed transition-colors">
+            Load More from Archive
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</div>
+<!-- END: Product Area -->
+</div>
+<!-- END: Layout Container -->
+</main>
+<!-- BEGIN: Footer -->
+<footer class="border-t border-gray-100 py-12 px-8">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<p class="text-[11px] text-gray-400">© 2024 Mitra Abadi Textile Archive. All rights reserved.</p>
+<div class="flex gap-8 text-[11px] font-bold uppercase tracking-widest text-gray-500">
+<a class="hover:text-brandRed transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-brandRed transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-brandRed transition-colors" href="#">Accessibility</a>
+<a class="hover:text-brandRed transition-colors" href="#">Sustainability</a>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+<!-- BEGIN: Floating Action Button & Chat Menu -->
+<div class="fixed bottom-8 right-8 z-50 flex flex-col items-end">
+<!-- Chat Popup Menu (Visible as requested) -->
+<div class="mb-4 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden w-64" id="chat-menu">
+<div class="p-4 border-b border-gray-50 bg-gray-50/50">
+<span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">How can we help?</span>
+</div>
+<div class="flex flex-col">
+<!-- Chat with Admin -->
+<button class="flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors text-left border-b border-gray-50">
+<div class="w-10 h-10 rounded-full bg-green-50 text-green-600 flex items-center justify-center">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.483 8.413-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.308 1.654zm6.233-3.762l.341.202c1.476.873 3.177 1.335 4.919 1.336 5.438 0 9.864-4.426 9.867-9.864 0-2.636-1.026-5.111-2.89-6.975-1.864-1.864-4.339-2.89-6.974-2.891-5.437 0-9.865 4.426-9.867 9.865-.001 2.146.601 4.231 1.741 6.012l.223.347-1.121 4.092 4.161-1.094z"></path></svg>
+</div>
+<div>
+<div class="text-sm font-bold">Chat with Admin</div>
+<div class="text-[10px] text-gray-500 font-medium">WhatsApp Support</div>
+</div>
+</button>
+<!-- Chat with AI Assistant -->
+<button class="flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors text-left">
+<div class="w-10 h-10 rounded-full bg-brandRed/10 text-brandRed flex items-center justify-center">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<div class="text-sm font-bold">Chat with AI Assistant</div>
+<div class="text-[10px] text-gray-500 font-medium">Instant Support 24/7</div>
+</div>
+</button>
+</div>
+</div>
+<!-- Floating Action Button -->
+<button class="w-14 h-14 bg-brandRed rounded-full shadow-xl flex items-center justify-center text-white hover:scale-105 active:scale-95 transition-all" id="fab-main">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</button>
+</div>
+<!-- END: Floating Action Button & Chat Menu -->
+<script data-purpose="interactivity">
+    // Simple toggle logic for the menu (though requested as visible)
+    const fab = document.getElementById('fab-main');
+    const menu = document.getElementById('chat-menu');
+    
+    fab.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('flex');
+    });
+  </script>
+</body></html>

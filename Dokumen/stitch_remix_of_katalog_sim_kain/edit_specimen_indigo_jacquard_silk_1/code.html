@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edit Specimen - Mitra Abadi Textile Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary": "#ac322d",
+                        "on-secondary-fixed-variant": "#8b1918",
+                        "surface-bright": "#f9f9f9",
+                        "on-tertiary-container": "#fefdff",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-fixed": "#ffdad6",
+                        "on-secondary-fixed": "#410002",
+                        "tertiary": "#006291",
+                        "on-surface": "#1a1c1c",
+                        "secondary-fixed": "#ffdad6",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#410002",
+                        "tertiary-fixed-dim": "#8ecdff",
+                        "inverse-surface": "#2f3131",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#dadada",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#c00015",
+                        "outline": "#926e6b",
+                        "surface-container": "#eeeeee",
+                        "on-surface-variant": "#5d3f3c",
+                        "primary-fixed-dim": "#ffb4ac",
+                        "outline-variant": "#e7bdb8",
+                        "on-secondary-container": "#6d0007",
+                        "on-primary-fixed-variant": "#93000d",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "on-primary-container": "#fffdff",
+                        "inverse-primary": "#ffb4ac",
+                        "background": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#bd0015",
+                        "on-tertiary-fixed": "#001e30",
+                        "tertiary-fixed": "#cbe6ff",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "on-background": "#1a1c1c",
+                        "surface-container-highest": "#e2e2e2",
+                        "tertiary-container": "#007cb6",
+                        "primary-container": "#e61e25",
+                        "surface-variant": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#004b71",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface": "#f9f9f9",
+                        "secondary-container": "#fd6d63"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope", "sans-serif"],
+                        "display": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Editorial Input Styling - The Curator's Ledger */
+        .ledger-input {
+            @apply w-full bg-transparent border-0 border-b border-outline-variant px-0 py-2 text-on-surface font-medium focus:ring-0 focus:border-primary transition-colors duration-300;
+        }
+        .ledger-label {
+            @apply text-xs font-bold uppercase tracking-[0.05em] text-on-surface-variant mb-1 block;
+        }
+        /* Tertiary Editorial Link */
+        .editorial-link {
+            @apply relative inline-flex items-center gap-2 text-sm font-bold text-on-surface hover:text-primary transition-colors cursor-pointer;
+        }
+        .editorial-link::after {
+            content: '';
+            @apply absolute left-0 bottom-[-4px] w-full h-[1px] bg-primary scale-x-0 origin-left transition-transform duration-300;
+        }
+        .editorial-link:hover::after {
+            @apply scale-x-100;
+        }
+        
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dadada;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-fixed selection:text-on-primary-fixed min-h-screen flex flex-col">
+<!-- Note: Global Navigation Shell (SideNav/TopNav) is SUPPRESSED as this is a task-focused "Edit" screen with a "Back" action, representing a temporary departure from the main flow. -->
+<!-- Contextual Header -->
+<header class="sticky top-0 z-10 bg-surface/90 backdrop-blur-md px-8 py-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<button class="editorial-link mb-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+                Back to Detail View
+            </button>
+<h1 class="font-display text-4xl font-extrabold tracking-tight text-on-surface">Edit Specimen</h1>
+<p class="text-on-surface-variant mt-2">Refining archival metadata for JQD-IND-001</p>
+</div>
+<div class="flex items-center gap-6">
+<button class="editorial-link text-on-surface-variant hover:text-error">
+                Cancel
+            </button>
+<button class="bg-primary-container text-on-primary-container hover:bg-primary transition-all duration-300 px-8 py-3 rounded-md font-bold text-sm tracking-wide shadow-[0_4px_14px_0_rgba(230,30,37,0.2)] hover:shadow-[0_6px_20px_rgba(230,30,37,0.3)] hover:-translate-y-0.5 active:translate-y-0">
+                Save Changes
+            </button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 px-8 pb-24 max-w-[1600px] mx-auto w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-8">
+<!-- Left Column: Editorial Ledger Forms -->
+<div class="lg:col-span-7 xl:col-span-8 flex flex-col gap-12">
+<!-- Section: Informasi Dasar -->
+<section class="bg-surface-container-lowest p-8 rounded-xl tonal-lift">
+<h2 class="font-headline text-xl font-bold mb-8 text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">info</span>
+                        Informasi Dasar
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+<div>
+<label class="ledger-label">Nama Spesimen</label>
+<input class="ledger-input" type="text" value="Indigo Jacquard Silk"/>
+</div>
+<div>
+<label class="ledger-label">Kode SKU</label>
+<input class="ledger-input text-on-surface-variant" readonly="" type="text" value="JQD-IND-001"/>
+<p class="text-[10px] text-on-surface-variant mt-2 uppercase tracking-wider">SKU is immutable</p>
+</div>
+<div>
+<label class="ledger-label">Kategori</label>
+<!-- Minimalist Custom Select visually matching ledger line -->
+<div class="relative">
+<select class="ledger-input appearance-none bg-transparent pr-8 cursor-pointer">
+<option>Cotton</option>
+<option selected="">Silk</option>
+<option>Linen</option>
+<option>Wool</option>
+</select>
+<span class="material-symbols-outlined absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+</div>
+<div>
+<label class="ledger-label">Warna Dominan</label>
+<input class="ledger-input" type="text" value="Indigo Deep Blue"/>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Section: Manajemen Stok -->
+<section class="bg-surface-container-lowest p-8 rounded-xl tonal-lift">
+<h2 class="font-headline text-xl font-bold mb-8 text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                            Manajemen Stok
+                        </h2>
+<div>
+<label class="ledger-label">Stok Fisik (Yard)</label>
+<div class="relative">
+<input class="ledger-input text-2xl font-light pr-12" step="0.1" type="number" value="145.5"/>
+<span class="absolute right-0 bottom-2 text-on-surface-variant font-medium">yd</span>
+</div>
+</div>
+</section>
+<!-- Section: Informasi Harga -->
+<section class="bg-surface-container-lowest p-8 rounded-xl tonal-lift">
+<h2 class="font-headline text-xl font-bold mb-8 text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">payments</span>
+                            Informasi Harga
+                        </h2>
+<div class="flex flex-col gap-6">
+<div>
+<label class="ledger-label">Harga Minimum (IDR)</label>
+<input class="ledger-input" type="text" value="850.000,00"/>
+</div>
+<div>
+<label class="ledger-label">Harga Maksimum (IDR)</label>
+<input class="ledger-input" type="text" value="1.200.000,00"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Section: Curator's Notes -->
+<section class="bg-surface-container-lowest p-8 rounded-xl tonal-lift">
+<h2 class="font-headline text-xl font-bold mb-8 text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">edit_note</span>
+                        Curator's Notes / Deskripsi
+                    </h2>
+<div>
+<label class="ledger-label sr-only">Deskripsi</label>
+<textarea class="w-full bg-surface border border-outline-variant/30 rounded-lg p-4 text-on-surface font-body leading-relaxed focus:ring-0 focus:border-primary transition-colors min-h-[200px] resize-y" placeholder="Detail the weave pattern, historical significance, and preservation requirements...">A heavy, luxurious silk jacquard dyed in profound indigo. The weave features a subtle, historic floral motif characteristic of late 19th-century export textiles. Requires climate-controlled storage away from direct UV exposure to prevent fading of natural dyes.</textarea>
+</div>
+</section>
+</div>
+<!-- Right Column: Media Gallery & Context -->
+<div class="lg:col-span-5 xl:col-span-4 flex flex-col gap-8">
+<!-- Macro Texture Display -->
+<section class="bg-surface-container-low rounded-xl p-2 relative overflow-hidden group">
+<div class="absolute top-6 left-6 z-10 flex gap-2">
+<span class="bg-surface-container-lowest/80 backdrop-blur-md text-on-surface text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full">Primary Image</span>
+</div>
+<!-- Main Fabric Image -->
+<div class="w-full aspect-[4/5] bg-surface-container-highest rounded-lg overflow-hidden relative">
+<img alt="Indigo Jacquard Silk Texture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A macro photography shot of luxurious indigo jacquard silk fabric. The lighting is soft and directional, highlighting the complex woven floral motifs and the natural sheen of the deep blue silk threads. The background is completely filled by the textile, emphasizing the rich, heritage-grade red accents used in the UI system. The aesthetic is highly detailed, editorial, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh6JJ6j7zGpK2FhtzpYCJQ64_lY8ujg1Mh8SKFyuw7CCtAO7zJBiofkOfeXpN_ihVMDcleigp7m4_dLfuEju-SNsmcffGgHhdwgsDOQQWe4lfTkBlerD7MQ5aMYeSF_hSWuvhkrSftpbP0uyjylAJwqah-O19bfBpBen7mOQwbg4Ak_wpO6reEutb7m5hSN59gxElmyaWP-0lpumLelDBjzA9Ulx8_jLYNywcQsM5qgksk4-iMnpnwmDznAFOfKlTfoz_-9dT_cw9l"/>
+<!-- Hover Overlay for Image Actions -->
+<div class="absolute inset-0 bg-on-surface/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 backdrop-blur-sm">
+<button class="bg-surface-container-lowest text-on-surface p-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors" title="Replace Image">
+<span class="material-symbols-outlined">cameraswitch</span>
+</button>
+<button class="bg-surface-container-lowest text-error p-3 rounded-full hover:bg-error hover:text-on-error transition-colors" title="Remove Image">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Additional Media Upload -->
+<section class="bg-surface-container-lowest p-6 rounded-xl border border-dashed border-outline-variant/50 hover:bg-surface-container-low transition-colors cursor-pointer flex flex-col items-center justify-center text-center gap-4 min-h-[160px]">
+<div class="bg-surface text-primary p-4 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-2xl">add_photo_alternate</span>
+</div>
+<div>
+<h3 class="font-bold text-sm text-on-surface">Upload Additional Angles</h3>
+<p class="text-xs text-on-surface-variant mt-1 max-w-[200px]">Drag &amp; drop hi-res TIFF or JPG files here.</p>
+</div>
+</section>
+</div>
+</div>
+</main>
+<style>
+        /* Tonal Lift utility based on Design System */
+        .tonal-lift {
+            box-shadow: 0 4px 24px -8px rgba(26, 28, 28, 0.04);
+            border: 1px solid rgba(231, 189, 184, 0.15); /* Ghost border fallback */
+        }
+    </style>
+</body></html>

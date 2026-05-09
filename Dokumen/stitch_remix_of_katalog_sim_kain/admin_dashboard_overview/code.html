@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mitra Abadi Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c2c6d4",
+                    "on-secondary-fixed-variant": "#474746",
+                    "secondary-container": "#e2dfde",
+                    "tertiary-fixed": "#ffdbcf",
+                    "surface-dim": "#d9dadb",
+                    "inverse-on-surface": "#f0f1f2",
+                    "background": "#f8f9fa",
+                    "primary": "#003f87",
+                    "on-primary-container": "#bbd0ff",
+                    "inverse-primary": "#acc7ff",
+                    "surface-container-high": "#e7e8e9",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#001a40",
+                    "tertiary": "#772600",
+                    "on-tertiary-fixed": "#380d00",
+                    "error": "#ba1a1a",
+                    "secondary": "#5f5e5e",
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "on-tertiary-container": "#ffc2ac",
+                    "surface-container-low": "#f3f4f5",
+                    "surface-container": "#edeeef",
+                    "primary-fixed": "#d7e2ff",
+                    "surface-variant": "#e1e3e4",
+                    "primary-fixed-dim": "#acc7ff",
+                    "on-tertiary-fixed-variant": "#802a00",
+                    "inverse-surface": "#2e3132",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-background": "#191c1d",
+                    "on-surface-variant": "#424752",
+                    "tertiary-container": "#9f3500",
+                    "primary-container": "#0056b3",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#636262",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#115cb9",
+                    "on-primary-fixed-variant": "#004491",
+                    "on-primary": "#ffffff",
+                    "outline": "#727784",
+                    "surface-bright": "#f8f9fa",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#191c1d",
+                    "surface": "#f8f9fa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #191c1d;
+        }
+        .textile-gradient-btn {
+            background: linear-gradient(135deg, #003f87 0%, #0056b3 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- SideNavBar Integration -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-slate-100 dark:bg-slate-950 flex flex-col h-full border-r border-slate-200 dark:border-slate-800 font-inter text-xs uppercase tracking-widest font-bold">
+<div class="px-8 py-10">
+<h1 class="text-lg font-manrope font-black text-blue-900 dark:text-white">Mitra Abadi</h1>
+<p class="text-[10px] opacity-60 tracking-normal font-medium mt-1">Admin Terminal</p>
+</div>
+<nav class="flex-grow">
+<ul class="space-y-1">
+<li>
+<a class="bg-white dark:bg-slate-900 text-blue-700 dark:text-blue-300 rounded-l-full ml-4 pl-4 py-3 flex items-center gap-3 translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+</li>
+<li>
+<a class="text-slate-500 dark:text-slate-500 hover:text-blue-600 px-8 py-3 flex items-center gap-3 transition-all hover:bg-white/50 dark:hover:bg-slate-800/50" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Inventory</span>
+</a>
+</li>
+<li>
+<a class="text-slate-500 dark:text-slate-500 hover:text-blue-600 px-8 py-3 flex items-center gap-3 transition-all hover:bg-white/50 dark:hover:bg-slate-800/50" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span>Orders</span>
+</a>
+</li>
+<li>
+<a class="text-slate-500 dark:text-slate-500 hover:text-blue-600 px-8 py-3 flex items-center gap-3 transition-all hover:bg-white/50 dark:hover:bg-slate-800/50" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Customers</span>
+</a>
+</li>
+<li>
+<a class="text-slate-500 dark:text-slate-500 hover:text-blue-600 px-8 py-3 flex items-center gap-3 transition-all hover:bg-white/50 dark:hover:bg-slate-800/50" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Reports</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class="px-6 py-6">
+<button class="w-full textile-gradient-btn text-white py-3 rounded-lg flex items-center justify-center gap-2 text-sm font-semibold tracking-normal">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                New Entry
+            </button>
+</div>
+<footer class="mt-auto border-t border-slate-200 dark:border-slate-800 pt-4 pb-8">
+<ul class="space-y-1">
+<li>
+<a class="text-slate-500 dark:text-slate-500 hover:text-blue-600 px-8 py-2 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</li>
+<li>
+<a class="text-slate-500 dark:text-slate-500 hover:text-blue-600 px-8 py-2 flex items-center gap-3 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Support</span>
+</a>
+</li>
+</ul>
+</footer>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen p-12">
+<!-- Header -->
+<header class="mb-12 flex justify-between items-end">
+<div>
+<span class="text-label-sm font-label uppercase tracking-[0.2em] text-on-surface-variant/70 text-[10px]">Archival System v2.4</span>
+<h2 class="text-4xl font-headline font-extrabold text-primary tracking-tight mt-1">Operational Overview</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right">
+<p class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Session Admin</p>
+<p class="text-sm font-body text-on-surface">Haris Santoso</p>
+</div>
+<div class="w-12 h-12 bg-surface-container-high rounded-full overflow-hidden">
+<img alt="Admin Avatar" class="w-full h-full object-cover" data-alt="professional portrait of a middle-aged asian businessman in a crisp white shirt against a neutral grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBt0E8RaVVGtVLwvZfuBDtvdKbGgQxENE-QikzA-9K3Wv_-boBySRrbmmjVg8i8-tao1k5kx5NzbDq_n1gVwfoiolM0EcNJgEvAqm8IkX7v2vCjs1MtYUY7cbOIkN846FNA698h9vOh7uJAPO-GfzoH8KcLpVF_kJnHID8QWtTWkSsZ8QU7hAZ29EN6cLemWKnONsTYBHOkC1iBDDGJEQxh0VD2nMaRTDZI4szpOUrvs-DQa5WFi7TURGS6MZcy89SKyfVDrWYyFsQ"/>
+</div>
+</div>
+</header>
+<!-- KPI Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Total Sales -->
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-between h-48 border border-outline-variant/10">
+<div class="flex justify-between items-start">
+<span class="text-label-md font-label uppercase tracking-widest text-on-surface-variant">Total Sales</span>
+<span class="material-symbols-outlined text-primary" data-icon="payments">payments</span>
+</div>
+<div>
+<h3 class="text-3xl font-headline font-bold text-on-surface">Rp 482.90M</h3>
+<p class="text-xs text-primary font-medium mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+                        +12.4% from last month
+                    </p>
+</div>
+</div>
+<!-- Active Orders -->
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-between h-48 border border-outline-variant/10">
+<div class="flex justify-between items-start">
+<span class="text-label-md font-label uppercase tracking-widest text-on-surface-variant">Active Orders</span>
+<span class="material-symbols-outlined text-primary" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<h3 class="text-3xl font-headline font-bold text-on-surface">142</h3>
+<p class="text-xs text-on-surface-variant font-medium mt-2">Current logistical pipeline</p>
+</div>
+</div>
+<!-- Low Stock Items -->
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-between h-48 border border-outline-variant/10">
+<div class="flex justify-between items-start">
+<span class="text-label-md font-label uppercase tracking-widest text-on-surface-variant">Low Stock Items</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="inventory">inventory</span>
+</div>
+<div>
+<h3 class="text-3xl font-headline font-bold text-tertiary">18</h3>
+<p class="text-xs text-tertiary font-medium mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+                        Requires immediate restock
+                    </p>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Recent Orders Table -->
+<section class="lg:col-span-2">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/10">
+<div class="px-8 py-6 flex justify-between items-center bg-surface-container-low/30">
+<h4 class="font-headline font-bold text-xl text-on-surface">Recent Order Pipeline</h4>
+<button class="text-primary text-xs font-bold uppercase tracking-widest hover:underline">View All Archive</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-8 py-4 text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Order ID</th>
+<th class="px-8 py-4 text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Customer</th>
+<th class="px-8 py-4 text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Product Category</th>
+<th class="px-8 py-4 text-[10px] font-label uppercase tracking-widest text-on-surface-variant text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/50">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-5 font-mono text-xs text-on-surface">#MA-9842</td>
+<td class="px-8 py-5 text-sm font-medium text-on-surface">Sentosa Garments</td>
+<td class="px-8 py-5 text-sm text-on-surface-variant">Premium Cotton Twill</td>
+<td class="px-8 py-5 text-right">
+<span class="inline-block px-3 py-1 rounded-full bg-primary-container text-on-primary-fixed-variant text-[10px] font-bold uppercase tracking-wider">Shipped</span>
+</td>
+</tr>
+<tr class="bg-surface-container-low/20 hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-5 font-mono text-xs text-on-surface">#MA-9843</td>
+<td class="px-8 py-5 text-sm font-medium text-on-surface">Dian Boutique</td>
+<td class="px-8 py-5 text-sm text-on-surface-variant">Silk Chiffon Series</td>
+<td class="px-8 py-5 text-right">
+<span class="inline-block px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold uppercase tracking-wider">Processing</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-5 font-mono text-xs text-on-surface">#MA-9844</td>
+<td class="px-8 py-5 text-sm font-medium text-on-surface">Batik House Int.</td>
+<td class="px-8 py-5 text-sm text-on-surface-variant">Indigo Hand-dyed</td>
+<td class="px-8 py-5 text-right">
+<span class="inline-block px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-wider">Pending Payment</span>
+</td>
+</tr>
+<tr class="bg-surface-container-low/20 hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-5 font-mono text-xs text-on-surface">#MA-9845</td>
+<td class="px-8 py-5 text-sm font-medium text-on-surface">Urban Wear Co.</td>
+<td class="px-8 py-5 text-sm text-on-surface-variant">Stretch Denim Raw</td>
+<td class="px-8 py-5 text-right">
+<span class="inline-block px-3 py-1 rounded-full bg-primary-container text-on-primary-fixed-variant text-[10px] font-bold uppercase tracking-wider">Shipped</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Visual Alerts / Low Stock -->
+<section class="lg:col-span-1">
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/10 h-full">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-tertiary" data-icon="priority_high">priority_high</span>
+<h4 class="font-headline font-bold text-xl text-on-surface">Critical Stock Alerts</h4>
+</div>
+<div class="space-y-6">
+<!-- Stock Item 1 -->
+<div class="group">
+<div class="flex justify-between items-end mb-2">
+<div>
+<p class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant mb-1">SKU: MA-TX-001</p>
+<p class="text-sm font-bold text-on-surface">Crimson Velvet Roll</p>
+</div>
+<p class="text-xs font-bold text-tertiary">2 Rolls Left</p>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 15%;"></div>
+</div>
+</div>
+<!-- Stock Item 2 -->
+<div class="group">
+<div class="flex justify-between items-end mb-2">
+<div>
+<p class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant mb-1">SKU: MA-TX-048</p>
+<p class="text-sm font-bold text-on-surface">Linen Blend - Sand</p>
+</div>
+<p class="text-xs font-bold text-tertiary">5 Rolls Left</p>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 25%;"></div>
+</div>
+</div>
+<!-- Stock Item 3 -->
+<div class="group">
+<div class="flex justify-between items-end mb-2">
+<div>
+<p class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant mb-1">SKU: MA-TX-112</p>
+<p class="text-sm font-bold text-on-surface">Organic Bamboo - White</p>
+</div>
+<p class="text-xs font-bold text-tertiary">3 Rolls Left</p>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 18%;"></div>
+</div>
+</div>
+</div>
+<div class="mt-12 p-6 rounded-lg bg-surface-container-low border border-tertiary/10">
+<p class="text-xs text-on-surface-variant leading-relaxed">
+<span class="font-bold text-tertiary uppercase">Automated Advisory:</span> Global cotton prices are expected to rise by 4% next week. It is recommended to restock critical items before Friday.
+                        </p>
+<button class="mt-4 text-xs font-bold text-primary flex items-center gap-1 group">
+                            Generate Purchase Orders
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Integration -->
+<footer class="mt-16 pt-8 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center w-full font-inter text-[10px] uppercase tracking-widest">
+<div class="text-slate-400">
+                © 2024 Mitra Abadi Textile Archivist. All rights reserved.
+            </div>
+<div class="flex gap-8">
+<a class="text-slate-400 hover:text-blue-900 transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="text-slate-400 hover:text-blue-900 transition-colors duration-300" href="#">Terms of Service</a>
+<a class="text-slate-400 hover:text-blue-900 transition-colors duration-300" href="#">WhatsApp Support</a>
+</div>
+</footer>
+</main>
+</body></html>

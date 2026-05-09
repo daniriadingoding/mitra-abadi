@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manual Order Entry | Mitra Abadi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c2c6d4",
+                    "on-secondary-fixed-variant": "#474746",
+                    "secondary-container": "#e2dfde",
+                    "tertiary-fixed": "#ffdbcf",
+                    "surface-dim": "#d9dadb",
+                    "inverse-on-surface": "#f0f1f2",
+                    "background": "#f8f9fa",
+                    "primary": "#003f87",
+                    "on-primary-container": "#bbd0ff",
+                    "inverse-primary": "#acc7ff",
+                    "surface-container-high": "#e7e8e9",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#001a40",
+                    "tertiary": "#772600",
+                    "on-tertiary-fixed": "#380d00",
+                    "error": "#ba1a1a",
+                    "secondary": "#5f5e5e",
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "on-tertiary-container": "#ffc2ac",
+                    "surface-container-low": "#f3f4f5",
+                    "surface-container": "#edeeef",
+                    "primary-fixed": "#d7e2ff",
+                    "surface-variant": "#e1e3e4",
+                    "primary-fixed-dim": "#acc7ff",
+                    "on-tertiary-fixed-variant": "#802a00",
+                    "inverse-surface": "#2e3132",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-background": "#191c1d",
+                    "on-surface-variant": "#424752",
+                    "tertiary-container": "#9f3500",
+                    "primary-container": "#0056b3",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#636262",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#115cb9",
+                    "on-primary-fixed-variant": "#004491",
+                    "on-primary": "#ffffff",
+                    "outline": "#727784",
+                    "surface-bright": "#f8f9fa",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#191c1d",
+                    "surface": "#f8f9fa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .editorial-header {
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<div class="flex min-h-screen">
+<!-- SideNavBar - JSON Specified -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-slate-100 dark:bg-slate-950 flex flex-col border-r border-slate-200 dark:border-slate-800 z-40">
+<div class="px-8 py-10">
+<h1 class="text-lg font-manrope font-black text-blue-900 dark:text-white uppercase tracking-tight">Mitra Abadi</h1>
+<p class="font-inter text-xs uppercase tracking-widest font-bold text-slate-500 mt-1">Admin Terminal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Dashboard -->
+<a class="flex items-center text-slate-500 dark:text-slate-500 hover:text-blue-600 px-8 py-3 transition-all hover:bg-white/50 dark:hover:bg-slate-800/50" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span class="font-inter text-xs uppercase tracking-widest font-bold">Dashboard</span>
+</a>
+<!-- Inventory -->
+<a class="flex items-center text-slate-500 dark:text-slate-500 hover:text-blue-600 px-8 py-3 transition-all hover:bg-white/50 dark:hover:bg-slate-800/50" href="#">
+<span class="material-symbols-outlined mr-3">inventory_2</span>
+<span class="font-inter text-xs uppercase tracking-widest font-bold">Inventory</span>
+</a>
+<!-- Orders (Active for this page) -->
+<a class="flex items-center bg-white dark:bg-slate-900 text-blue-700 dark:text-blue-300 rounded-l-full ml-4 pl-4 py-3 translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="font-inter text-xs uppercase tracking-widest font-bold">Orders</span>
+</a>
+<!-- Customers -->
+<a class="flex items-center text-slate-500 dark:text-slate-500 hover:text-blue-600 px-8 py-3 transition-all hover:bg-white/50 dark:hover:bg-slate-800/50" href="#">
+<span class="material-symbols-outlined mr-3">group</span>
+<span class="font-inter text-xs uppercase tracking-widest font-bold">Customers</span>
+</a>
+<!-- Reports -->
+<a class="flex items-center text-slate-500 dark:text-slate-500 hover:text-blue-600 px-8 py-3 transition-all hover:bg-white/50 dark:hover:bg-slate-800/50" href="#">
+<span class="material-symbols-outlined mr-3">analytics</span>
+<span class="font-inter text-xs uppercase tracking-widest font-bold">Reports</span>
+</a>
+</nav>
+<div class="px-8 py-6">
+<button class="w-full bg-primary-container text-white py-3 rounded-lg font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-opacity">
+                    New Entry
+                </button>
+</div>
+<div class="mt-auto border-t border-slate-200 dark:border-slate-800 pt-4 pb-10 space-y-1">
+<a class="flex items-center text-slate-400 hover:text-blue-900 dark:hover:text-white px-8 py-2 transition-colors duration-300" href="#">
+<span class="material-symbols-outlined mr-3 text-sm">settings</span>
+<span class="font-inter text-[10px] uppercase tracking-widest">Settings</span>
+</a>
+<a class="flex items-center text-slate-400 hover:text-blue-900 dark:hover:text-white px-8 py-2 transition-colors duration-300" href="#">
+<span class="material-symbols-outlined mr-3 text-sm">help</span>
+<span class="font-inter text-[10px] uppercase tracking-widest">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 bg-surface min-h-screen pb-20">
+<!-- Header Section -->
+<header class="sticky top-0 z-30 px-12 py-8 glass-panel border-b border-outline-variant/10">
+<div class="flex justify-between items-end">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">forum</span>
+<span class="font-label text-[10px] uppercase tracking-[0.1em] text-secondary font-bold">Order Channel: WhatsApp</span>
+</div>
+<h2 class="editorial-header text-4xl font-extrabold text-on-surface">Manual Order Entry</h2>
+</div>
+<div class="text-right">
+<p class="font-label text-[10px] uppercase tracking-widest text-secondary font-semibold">Transaction ID</p>
+<p class="font-mono text-primary font-bold">#MA-ORD-2024-0892</p>
+</div>
+</div>
+</header>
+<!-- Form Layout -->
+<div class="px-12 py-10 max-w-7xl mx-auto grid grid-cols-12 gap-12">
+<!-- Left Column: Entry Form -->
+<div class="col-span-12 lg:col-span-8 space-y-12">
+<!-- Section 1: Customer Identity -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="editorial-header text-xl font-bold flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-sm font-black">01</span>
+                                Customer Identity
+                            </h3>
+<button class="text-primary text-xs font-bold uppercase tracking-widest hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">person_add</span>
+                                New Customer Profile
+                            </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Search Database</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-lowest border-none rounded-lg focus:ring-2 focus:ring-primary/20 text-sm placeholder-outline-variant transition-all" placeholder="Start typing name or WhatsApp number..." type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Verification Status</label>
+<div class="w-full py-4 px-4 bg-surface-container-low rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-xs font-semibold text-secondary">Awaiting customer selection</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Product Selection -->
+<section class="space-y-6">
+<h3 class="editorial-header text-xl font-bold flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-sm font-black">02</span>
+                            Inventory Selection
+                        </h3>
+<!-- Searchable Dropdown Mock -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="p-4 border-b border-outline-variant/10 flex items-center gap-4">
+<span class="material-symbols-outlined text-outline">inventory_2</span>
+<input class="flex-1 border-none focus:ring-0 text-sm font-medium bg-transparent" placeholder="Search by SKU or Fabric Name..." type="text" value="Luxury Silk Satin"/>
+<span class="material-symbols-outlined text-outline cursor-pointer">arrow_drop_down</span>
+</div>
+<!-- Selected Item Visual -->
+<div class="p-6 flex gap-8 items-center bg-primary/5">
+<div class="w-24 h-24 rounded bg-surface overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="close-up of a shimmering roll of premium indigo blue silk fabric with elegant folds and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQGnytRPi-Nb8DwjrqCCDBQ-vhudThPtXzKQV4e_kVvXQQzMlUJxkKYzRvjZljVa7pA0ROIQi4XosGP8DvQdW_uqhp8FvP6Mf2QL7bFFzJ6jCLa6WxGVSBuYliYENc4ELtgLzGFPgGyBAjcx-rfXXrv4-hdSyUwB-7EAUpzznAQpISSElXZy7zbkpcWPsTqGdLJ73qQxLYPISjF6m-GoKmTjHAj5QVhBI3Dz_0UqnEJCKj705mpTARmTU8BXOQeBsmk7C3jltC-1Wr"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-headline font-bold text-primary">Luxury Silk Satin - Indigo</h4>
+<p class="font-label text-[10px] uppercase tracking-widest font-bold text-secondary">SKU: IND-SIL-0442</p>
+</div>
+<div class="bg-primary-container text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase">In Stock: 420m</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-4">
+<div class="space-y-1">
+<label class="font-label text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Quantity (Meters)</label>
+<div class="flex items-center gap-2">
+<input class="w-24 border-none bg-white rounded-md py-2 px-3 text-sm focus:ring-2 focus:ring-primary/20" type="number" value="12.5"/>
+<span class="text-xs font-bold text-outline">m</span>
+</div>
+</div>
+<div class="space-y-1 text-right">
+<label class="font-label text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Unit Price</label>
+<p class="text-sm font-bold text-on-surface">Rp 125,000 / m</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Fulfillment & Logistics -->
+<section class="space-y-6">
+<h3 class="editorial-header text-xl font-bold flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-sm font-black">03</span>
+                            Logistics &amp; Fulfillment
+                        </h3>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Shipping Address</label>
+<textarea class="w-full p-4 bg-surface-container-lowest border-none rounded-lg focus:ring-2 focus:ring-primary/20 text-sm placeholder-outline-variant transition-all" placeholder="Full address including ZIP code and specific landmarks..." rows="4"></textarea>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Courier Choice</label>
+<select class="w-full p-4 bg-surface-container-lowest border-none rounded-lg focus:ring-2 focus:ring-primary/20 text-sm transition-all appearance-none">
+<option>JNE - Express (1-2 Days)</option>
+<option>TIKI - Regular (3-5 Days)</option>
+<option>GoSend - Instant (Jakarta Only)</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Packing Note</label>
+<input class="w-full p-4 bg-surface-container-lowest border-none rounded-lg focus:ring-2 focus:ring-primary/20 text-sm transition-all" placeholder="e.g. Roll packaging required" type="text"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Invoice Summary (Sticky Sidebar) -->
+<div class="col-span-12 lg:col-span-4">
+<div class="sticky top-40 space-y-6">
+<div class="bg-inverse-surface text-inverse-on-surface p-8 rounded-2xl shadow-xl">
+<div class="flex items-center gap-2 mb-6 opacity-80">
+<span class="material-symbols-outlined text-sm">calculate</span>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold">Estimated Invoice Total</span>
+</div>
+<div class="space-y-4 border-b border-white/10 pb-6 mb-6">
+<div class="flex justify-between text-sm">
+<span class="opacity-60">Subtotal (12.5m)</span>
+<span>Rp 1,562,500</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="opacity-60">Shipping (Estimated)</span>
+<span>Rp 45,000</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="opacity-60">Admin Fee</span>
+<span>Rp 5,000</span>
+</div>
+</div>
+<div class="mb-8">
+<div class="flex justify-between items-end">
+<span class="font-label text-[10px] uppercase tracking-widest font-bold opacity-60">Total Amount</span>
+<span class="editorial-header text-3xl font-extrabold text-primary-fixed">Rp 1,612,500</span>
+</div>
+</div>
+<button class="w-full py-4 bg-tertiary-container hover:bg-tertiary transition-all rounded-lg font-headline font-bold text-white shadow-lg flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">receipt</span>
+                                Create Order &amp; Generate Invoice
+                            </button>
+<p class="text-[10px] text-center mt-4 opacity-40 leading-relaxed">
+                                By proceeding, a digital invoice will be generated and a tracking link will be prepared for the WhatsApp thread.
+                            </p>
+</div>
+<!-- Quick Actions -->
+<div class="bg-surface-container p-6 rounded-2xl space-y-4">
+<h4 class="font-label text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Post-Creation Actions</h4>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 p-3 bg-surface-container-lowest rounded-lg cursor-pointer group">
+<input checked="" class="rounded text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-xs font-semibold text-secondary group-hover:text-on-surface">Auto-send link to WhatsApp</span>
+</label>
+<label class="flex items-center gap-3 p-3 bg-surface-container-lowest rounded-lg cursor-pointer group">
+<input class="rounded text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-xs font-semibold text-secondary group-hover:text-on-surface">Mark as Paid (Manual)</span>
+</label>
+</div>
+</div>
+<!-- Warehouse Card -->
+<div class="relative rounded-2xl overflow-hidden aspect-video group cursor-help">
+<img class="w-full h-full object-cover brightness-50 group-hover:brightness-[0.35] transition-all" data-alt="wide shot of a clean modern textile warehouse with tall metal shelving units filled with various colored fabric rolls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQY89VyoNqLxRjCbvdK7GnRiBtcK-AkHkbPDXFmfvAkMLTfhCiqRp8sdvrwasiqIAj7gv0s8BJMFJx6NoPm7KcwzFAjGRyBErVWmku0PwVGhdRtjfBOeHVm9cAHIwBHzACySPtuYph5ATv3RNJU71jaS6LwWPNy82-SwS0SEUT-ZDeGvAv4T5RaHNJuF1Tna7GZ-elapNX5-k5EYgq4MfmXF2Xvu79j_wimwL2bI83sZJ1xFVHrAMqv5lOiaaqLlj6skKkkjOKnl1U"/>
+<div class="absolute inset-0 p-6 flex flex-col justify-end">
+<p class="font-label text-[10px] uppercase tracking-widest font-bold text-white/60">Dispatch Hub</p>
+<p class="text-white font-bold">Central Warehouse A-4</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer - JSON Specified -->
+<footer class="w-full border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 z-50 relative ml-64 max-w-[calc(100%-16rem)]">
+<div class="flex justify-between items-center px-12 py-8 w-full">
+<div class="flex gap-8">
+<a class="font-inter text-[10px] uppercase tracking-widest text-slate-400 hover:text-blue-900 dark:hover:text-white transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="font-inter text-[10px] uppercase tracking-widest text-slate-400 hover:text-blue-900 dark:hover:text-white transition-colors duration-300" href="#">Terms of Service</a>
+<a class="font-inter text-[10px] uppercase tracking-widest text-slate-400 hover:text-blue-900 dark:hover:text-white transition-colors duration-300" href="#">WhatsApp Support</a>
+</div>
+<p class="font-inter text-[10px] uppercase tracking-widest text-slate-400">
+                © 2024 Mitra Abadi Textile Archivist. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>

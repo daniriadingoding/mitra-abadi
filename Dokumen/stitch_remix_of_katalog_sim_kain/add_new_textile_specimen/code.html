@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Specimen Entry | Textile Archive Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#ffb4ac",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f1f1f1",
+                        "tertiary": "#006291",
+                        "surface-container-low": "#f3f3f3",
+                        "on-secondary-fixed-variant": "#8b1918",
+                        "on-background": "#1a1c1c",
+                        "on-surface": "#1a1c1c",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "primary": "#bd0015",
+                        "inverse-primary": "#ffb4ac",
+                        "surface": "#f9f9f9",
+                        "secondary-container": "#fd6d63",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "background": "#f9f9f9",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#ac322d",
+                        "outline-variant": "#e7bdb8",
+                        "on-tertiary-fixed": "#001e30",
+                        "secondary-fixed": "#ffdad6",
+                        "primary-fixed": "#ffdad6",
+                        "primary-container": "#e61e25",
+                        "tertiary-container": "#007cb6",
+                        "surface-dim": "#dadada",
+                        "surface-tint": "#c00015",
+                        "on-primary-fixed": "#410002",
+                        "tertiary-fixed-dim": "#8ecdff",
+                        "on-secondary-container": "#6d0007",
+                        "on-primary-fixed-variant": "#93000d",
+                        "surface-bright": "#f9f9f9",
+                        "inverse-surface": "#2f3131",
+                        "outline": "#926e6b",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#fffdff",
+                        "on-tertiary-fixed-variant": "#004b71",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#fefdff",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary-fixed": "#cbe6ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#410002",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e2e2e2",
+                        "on-surface-variant": "#5d3f3c",
+                        "surface-container": "#eeeeee"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar -->
+<aside class="flex flex-col py-8 px-4 h-full w-64 fixed left-0 top-0 bg-[#F3F3F3] dark:bg-gray-800 font-manrope uppercase text-[10px] tracking-widest font-semibold z-50">
+<div class="mb-10 px-4">
+<span class="text-xl font-black text-[#1A1C1C] dark:text-gray-100">Archive Portal</span>
+<p class="text-[8px] opacity-60 tracking-widest mt-1">The Digital Curator</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Dashboard -->
+<div class="group flex items-center px-4 py-3 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all cursor-pointer">
+<span class="material-symbols-outlined mr-3 text-lg" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</div>
+<!-- Archive Explorer -->
+<div class="group flex items-center px-4 py-3 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all cursor-pointer">
+<span class="material-symbols-outlined mr-3 text-lg" data-icon="folder_open">folder_open</span>
+<span>Archive Explorer</span>
+</div>
+<!-- Inventory -->
+<div class="group flex items-center px-4 py-3 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all cursor-pointer">
+<span class="material-symbols-outlined mr-3 text-lg" data-icon="inventory_2">inventory_2</span>
+<span>Inventory</span>
+</div>
+<!-- Specimen Entry (ACTIVE) -->
+<div class="group flex items-center px-4 py-3 text-[#BD0015] dark:text-red-400 border-r-2 border-[#BD0015] bg-white/50 dark:bg-gray-900/50 cursor-pointer">
+<span class="material-symbols-outlined mr-3 text-lg" data-icon="add_box" style="font-variation-settings: 'FILL' 1;">add_box</span>
+<span>Specimen Entry</span>
+</div>
+<!-- Settings -->
+<div class="group flex items-center px-4 py-3 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all cursor-pointer">
+<span class="material-symbols-outlined mr-3 text-lg" data-icon="settings">settings</span>
+<span>Settings</span>
+</div>
+</nav>
+<div class="mt-auto space-y-1 pt-6 border-t border-outline-variant/15">
+<div class="flex items-center px-4 py-3 text-gray-500 hover:bg-gray-200 transition-all cursor-pointer">
+<span class="material-symbols-outlined mr-3 text-lg" data-icon="help">help</span>
+<span>Help</span>
+</div>
+<div class="flex items-center px-4 py-3 text-gray-500 hover:bg-gray-200 transition-all cursor-pointer">
+<span class="material-symbols-outlined mr-3 text-lg" data-icon="logout">logout</span>
+<span>Logout</span>
+</div>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 left-64 z-40 flex justify-between items-center px-8 bg-[#F9F9F9] dark:bg-gray-900 w-full h-16 font-manrope text-sm font-medium tracking-tight">
+<div class="flex items-center gap-4">
+<span class="text-lg font-bold tracking-tight text-[#1A1C1C] dark:text-gray-100 uppercase">Textile Archive Management</span>
+</div>
+<div class="flex items-center space-x-6">
+<div class="relative flex items-center group">
+<span class="material-symbols-outlined absolute left-3 text-gray-400 text-lg" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-surface-container-low border-none focus:ring-1 focus:ring-primary rounded-sm text-xs w-64 transition-all" placeholder="Search archive..." type="text"/>
+</div>
+<div class="flex items-center space-x-4">
+<button class="material-symbols-outlined text-[#1A1C1C] dark:text-gray-400 hover:text-[#BD0015] transition-colors" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-[#1A1C1C] dark:text-gray-400 hover:text-[#BD0015] transition-colors" data-icon="account_circle">account_circle</button>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-64 pt-24 pb-12 px-12 bg-surface min-h-screen">
+<header class="mb-10">
+<h1 class="text-4xl font-extrabold tracking-tighter text-on-surface mb-2">New Specimen Entry</h1>
+<p class="text-on-surface-variant font-body text-sm max-w-2xl leading-relaxed">
+                Add a new textile asset to the archive. Ensure technical specifications are verified against physical samples before committing to the digital curator ledger.
+            </p>
+</header>
+<form class="space-y-12">
+<!-- Asymmetric Bento Grid Form -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Section 1: Basic Information -->
+<div class="col-span-12 lg:col-span-7 space-y-8">
+<section class="bg-surface-container-lowest p-8 rounded-sm transition-all">
+<div class="flex items-center gap-3 mb-6">
+<span class="text-[10px] bg-primary-container text-white px-2 py-0.5 font-bold tracking-widest uppercase">01</span>
+<h2 class="text-sm font-bold uppercase tracking-widest">Basic Information</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+<div class="col-span-2 group">
+<label class="block text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-2">Textile Name</label>
+<input class="w-full border-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 bg-transparent text-lg font-medium transition-colors placeholder:text-surface-container-highest" placeholder="e.g., Crimson Royal Jacquard" type="text"/>
+</div>
+<div class="group">
+<label class="block text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-2">SKU Reference</label>
+<input class="w-full border-0 border-b border-outline-variant/30 bg-transparent px-0 py-2 text-on-surface-variant cursor-not-allowed font-mono" disabled="" type="text" value="MTRA-2023-XXXX"/>
+</div>
+<div class="group">
+<label class="block text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-2">Category</label>
+<select class="w-full border-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 bg-transparent text-sm transition-colors">
+<option>Silk</option>
+<option>Cotton</option>
+<option>Linen</option>
+<option>Wool</option>
+<option>Synthetic Blend</option>
+</select>
+</div>
+<div class="col-span-2 group">
+<label class="block text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-2">Material Composition</label>
+<input class="w-full border-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 bg-transparent text-sm transition-colors" placeholder="e.g., 100% Mulberry Silk, 22 Momme" type="text"/>
+</div>
+</div>
+</section>
+<!-- Section 3: Specifications -->
+<section class="bg-surface-container-lowest p-8 rounded-sm">
+<div class="flex items-center gap-3 mb-6">
+<span class="text-[10px] bg-on-surface text-white px-2 py-0.5 font-bold tracking-widest uppercase">02</span>
+<h2 class="text-sm font-bold uppercase tracking-widest">Technical Specifications</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group">
+<label class="block text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-2">Price per Meter (IDR)</label>
+<div class="relative">
+<span class="absolute left-0 bottom-2 text-xs font-bold opacity-40">Rp</span>
+<input class="w-full border-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 pl-6 pr-0 py-2 bg-transparent text-base transition-colors" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="group">
+<label class="block text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-2">Fabric Width (cm)</label>
+<div class="relative">
+<input class="w-full border-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 bg-transparent text-base transition-colors" placeholder="150" type="number"/>
+<span class="absolute right-0 bottom-2 text-[10px] font-bold opacity-40 uppercase">cm</span>
+</div>
+</div>
+<div class="group">
+<label class="block text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-2">Gramasi (GSM)</label>
+<div class="relative">
+<input class="w-full border-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 bg-transparent text-base transition-colors" placeholder="120" type="number"/>
+<span class="absolute right-0 bottom-2 text-[10px] font-bold opacity-40 uppercase">gsm</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Visuals & Inventory -->
+<div class="col-span-12 lg:col-span-5 space-y-8">
+<!-- Section 2: Visuals -->
+<section class="bg-surface-container-lowest p-8 rounded-sm h-fit">
+<div class="flex items-center gap-3 mb-6">
+<span class="text-[10px] bg-on-surface text-white px-2 py-0.5 font-bold tracking-widest uppercase">03</span>
+<h2 class="text-sm font-bold uppercase tracking-widest">Asset Visuals</h2>
+</div>
+<div class="group relative border-2 border-dashed border-outline-variant/20 hover:border-primary/40 transition-all rounded-sm p-8 flex flex-col items-center justify-center text-center space-y-4 bg-surface-container-low/30 min-h-[240px]">
+<span class="material-symbols-outlined text-4xl text-outline-variant/60 group-hover:text-primary transition-colors" data-icon="cloud_upload">cloud_upload</span>
+<div class="space-y-1">
+<p class="text-xs font-bold uppercase tracking-widest">Drag &amp; Drop Fabric Samples</p>
+<p class="text-[10px] text-on-surface-variant">Recommended: 2400x3200px, PNG or RAW</p>
+</div>
+<button class="mt-4 px-6 py-2 bg-on-surface text-white text-[10px] font-bold uppercase tracking-widest hover:bg-primary transition-colors" type="button">Browse Files</button>
+</div>
+<div class="mt-6 grid grid-cols-4 gap-2">
+<!-- Placeholder previews with data-alt -->
+<div class="aspect-square bg-surface-container-high relative group overflow-hidden">
+<img class="object-cover w-full h-full opacity-60 group-hover:scale-110 transition-transform" data-alt="close-up detail of luxurious red silk fabric with fine weave texture and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqYYYAqb0IZLNXaMFQbo9VBB-OOD2l5ETCzUA5tmKqyPLCAw_nB9jZzaS1tclW4MUanHgqyQlx1uFjcfptdyO_IIxx49YCDNT_gXRCPUVOiRNKAHy-S6JOoDiDJ02PPrsyRydrHzXFrgBfN8yQx-FRFE3uOQlWM0U8y2ZBq-aTPPT7jBqQJ4XXIag8LurwFhKPr7kYayfLb4BQkTumeQefF1G94OFbCYLwxNa5RsYb1Fcn3fVxtKGbAA4KTE2G4hl2u1LMLvGPKEJc"/>
+<button class="absolute top-1 right-1 material-symbols-outlined text-xs bg-white rounded-full p-0.5 text-error shadow-sm opacity-0 group-hover:opacity-100 transition-opacity" data-icon="close">close</button>
+</div>
+<div class="aspect-square border border-outline-variant/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant/40" data-icon="add">add</span>
+</div>
+</div>
+</section>
+<!-- Section 4: Initial Inventory Entry -->
+<section class="bg-surface-container-lowest p-8 rounded-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-8xl" data-icon="inventory_2">inventory_2</span>
+</div>
+<div class="flex items-center gap-3 mb-6 relative z-10">
+<span class="text-[10px] bg-on-surface text-white px-2 py-0.5 font-bold tracking-widest uppercase">04</span>
+<h2 class="text-sm font-bold uppercase tracking-widest">Inventory Initialization</h2>
+</div>
+<div class="space-y-8 relative z-10">
+<div class="grid grid-cols-2 gap-6">
+<div class="group">
+<label class="block text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-2">Number of Rolls</label>
+<input class="w-full border-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 bg-transparent text-xl font-bold transition-colors" placeholder="0" type="number"/>
+</div>
+<div class="group">
+<label class="block text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mb-2">Total Meterage</label>
+<div class="relative">
+<input class="w-full border-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 bg-transparent text-xl font-bold transition-colors" placeholder="0.00" type="number"/>
+<span class="absolute right-0 bottom-2 text-[10px] font-bold opacity-40">METER</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-sm flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5" data-icon="info">info</span>
+<div>
+<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface mb-1">Conversion Logic</p>
+<p class="text-[10px] text-on-surface-variant leading-relaxed">
+                                        Calculated average: <strong>0.00 m</strong> per roll. 
+                                        System will track individual roll metadata upon save.
+                                    </p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Form Actions -->
+<footer class="pt-8 mt-12 border-t border-outline-variant/15 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest opacity-60">Pending Archive Commitment</span>
+</div>
+<div class="flex gap-6">
+<button class="px-8 py-3 text-[10px] font-bold uppercase tracking-widest text-on-surface hover:text-primary transition-colors underline underline-offset-8" type="button">
+                        Cancel Entry
+                    </button>
+<button class="px-10 py-4 bg-primary-container text-white text-[10px] font-extrabold uppercase tracking-[0.2em] shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all" type="submit">
+                        Save to Archive
+                    </button>
+</div>
+</footer>
+</form>
+</main>
+</body></html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#ffb4ac",
+                    "on-secondary-container": "#6d0007",
+                    "on-background": "#1a1c1c",
+                    "inverse-primary": "#ffb4ac",
+                    "on-surface": "#1a1c1c",
+                    "on-primary-fixed-variant": "#93000d",
+                    "on-secondary-fixed": "#410002",
+                    "outline": "#926e6b",
+                    "surface-tint": "#c00015",
+                    "tertiary-fixed": "#cbe6ff",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#8ecdff",
+                    "surface-container-low": "#f3f3f3",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#fefdff",
+                    "outline-variant": "#e7bdb8",
+                    "surface-dim": "#dadada",
+                    "background": "#f9f9f9",
+                    "tertiary": "#006291",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface": "#f9f9f9",
+                    "on-tertiary-fixed-variant": "#004b71",
+                    "surface-container-high": "#e8e8e8",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e2e2e2",
+                    "secondary-fixed-dim": "#ffb4ac",
+                    "on-surface-variant": "#5d3f3c",
+                    "secondary-fixed": "#ffdad6",
+                    "surface-variant": "#e2e2e2",
+                    "on-secondary-fixed-variant": "#8b1918",
+                    "tertiary-container": "#007cb6",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#410002",
+                    "surface-bright": "#f9f9f9",
+                    "primary": "#bd0015",
+                    "secondary": "#ac322d",
+                    "secondary-container": "#fd6d63",
+                    "on-tertiary-fixed": "#001e30",
+                    "on-primary-container": "#fffdff",
+                    "inverse-surface": "#2f3131",
+                    "primary-fixed": "#ffdad6",
+                    "primary-container": "#e61e25",
+                    "surface-container": "#eeeeee",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift { background-color: #f3f3f3; }
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 flex flex-col h-full h-screen w-64 border-r border-neutral-200 bg-neutral-50 font-manrope tracking-tight">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-8 h-8 bg-primary rounded-sm flex items-center justify-center text-white font-black">M</div>
+<span class="text-lg font-bold text-red-600">Digital Curator</span>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 hover:bg-neutral-100 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 hover:bg-neutral-100 transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span>Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 hover:bg-neutral-100 transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-neutral-600 hover:bg-neutral-100 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-red-600 font-bold border-r-2 border-red-600 bg-neutral-100" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Reports</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-neutral-100">
+<div class="flex items-center gap-3 mb-4">
+<img alt="Archive Admin Profile" class="w-10 h-10 rounded-full bg-neutral-200" data-alt="Professional headshot of a curator in a minimalist art gallery setting, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9aWud6gI5TYTb7IZGUpSCTZmfcCjfzI6mo37ao-PQf1ht5CwwNN8V-n_rx5-lZhwBIkekHNxeiwfhggXXZRord1fD8BcLnVHrQgsTrAikrQyX-MSUnyz6AWSjiCtKFIcO8_5AsaOiR5z585Kjntvkg7HkyWpsB9VRrIva1I67X9Pcl0yEpVzMCwVnGjg7DHH6YJIYqu56o_jjOfegauXYDDyKY2gNKRkOpmlHU0UEruvBghvMwzVKtui5q5OtTqXAzAdWuhJqMj0D"/>
+<div>
+<p class="text-sm font-bold">Admin User</p>
+<p class="text-xs text-neutral-500">Textile Archive Admin</p>
+</div>
+</div>
+<button class="w-full py-2 bg-primary-container text-white font-bold text-sm rounded transition-all hover:opacity-80">
+                Add New Entry
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center px-8 h-16 w-full bg-white/80 backdrop-blur-md sticky top-0 z-10">
+<div class="flex items-center gap-8">
+<h1 class="text-xl font-black text-neutral-900 tracking-tighter">Archive Manager</h1>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 text-sm">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-surface-container-low border-none text-sm w-64 focus:ring-1 focus:ring-red-500/20 rounded" placeholder="Search archive..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-neutral-500 hover:text-red-500 transition-all"><span class="material-symbols-outlined">notifications</span></button>
+<button class="text-neutral-500 hover:text-red-500 transition-all"><span class="material-symbols-outlined">help_outline</span></button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Admin User Avatar" class="w-full h-full object-cover" data-alt="minimalist profile placeholder with soft grey tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK2LP9V_OsAyRsP31cd07TC0HVF9UbPQXak-5AbdePFbe_Kjr8bpXfq1k42kCsbJt_OuFSyK0d_gffLWlHNqmxBD7_bhIzmY4JwA2MAbrLHL73NV-U7qjr4nTIKhuuLf39QhLdaWyM5azJT9qaf9Or21Yi0LpWxvFOndasByV1EKozR42i3Kh9hy3bXvh22SPQ98Y6l7-fpsE-8IvsUnhqWQT5rJ_uRL4Xj7ffUlYMHl0PJzex7G4Kf354KUOi46otzgcnuvkEiwJa"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-8 max-w-7xl mx-auto">
+<!-- Page Header & Filters -->
+<div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
+<div>
+<h2 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2">Sales &amp; Performance Reports</h2>
+<p class="text-neutral-500 font-medium">Detailed analytical overview of textile acquisition and distribution.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="bg-surface-container-low px-4 py-2 flex items-center gap-3 rounded border-b border-outline-variant/30">
+<span class="text-xs font-bold uppercase tracking-widest text-neutral-400">Date Range</span>
+<select class="bg-transparent border-none text-sm font-semibold p-0 focus:ring-0">
+<option>Oct 01, 2023 - Oct 31, 2023</option>
+<option>Last 90 Days</option>
+<option>Year to Date</option>
+</select>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-bold text-primary border-b border-primary/20 hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined text-sm">download</span>
+                        PDF
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-bold text-primary border-b border-primary/20 hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined text-sm">csv</span>
+                        CSV
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Visualizations -->
+<div class="grid grid-cols-12 gap-6 mb-12">
+<!-- Main Revenue Chart -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest p-8 relative overflow-hidden group">
+<div class="flex justify-between items-start mb-12">
+<div>
+<h3 class="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-1">Monthly Revenue</h3>
+<p class="text-3xl font-black text-on-surface">Rp 1.482.000.000</p>
+</div>
+<div class="flex items-center gap-2 text-emerald-600 bg-emerald-50 px-2 py-1 rounded text-xs font-bold">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                            +12.4%
+                        </div>
+</div>
+<!-- Simulated Chart Visualization -->
+<div class="h-64 flex items-end justify-between gap-2">
+<div class="w-full bg-surface-container-high h-[30%] hover:bg-primary-container transition-all"></div>
+<div class="w-full bg-surface-container-high h-[45%] hover:bg-primary-container transition-all"></div>
+<div class="w-full bg-surface-container-high h-[35%] hover:bg-primary-container transition-all"></div>
+<div class="w-full bg-surface-container-high h-[60%] hover:bg-primary-container transition-all"></div>
+<div class="w-full bg-surface-container-high h-[55%] hover:bg-primary-container transition-all"></div>
+<div class="w-full bg-primary-container h-[85%]"></div>
+<div class="w-full bg-surface-container-high h-[40%] hover:bg-primary-container transition-all"></div>
+<div class="w-full bg-surface-container-high h-[50%] hover:bg-primary-container transition-all"></div>
+<div class="w-full bg-surface-container-high h-[70%] hover:bg-primary-container transition-all"></div>
+<div class="w-full bg-surface-container-high h-[65%] hover:bg-primary-container transition-all"></div>
+<div class="w-full bg-surface-container-high h-[50%] hover:bg-primary-container transition-all"></div>
+<div class="w-full bg-surface-container-high h-[55%] hover:bg-primary-container transition-all"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] font-bold text-neutral-400 uppercase tracking-tighter">
+<span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+</div>
+</div>
+<!-- Sales Volume / Distribution -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-lowest p-8 flex flex-col justify-between">
+<div>
+<h3 class="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-1">Archive Distribution</h3>
+<p class="text-3xl font-black text-on-surface">4,281 Units</p>
+</div>
+<div class="space-y-6 my-8">
+<div>
+<div class="flex justify-between text-sm mb-2">
+<span class="font-bold">Silk Textiles</span>
+<span class="text-neutral-400">42%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high">
+<div class="h-full bg-primary" style="width: 42%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-2">
+<span class="font-bold">Handwoven Cotton</span>
+<span class="text-neutral-400">28%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high">
+<div class="h-full bg-primary" style="width: 28%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-2">
+<span class="font-bold">Antique Batik</span>
+<span class="text-neutral-400">30%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high">
+<div class="h-full bg-primary" style="width: 30%"></div>
+</div>
+</div>
+</div>
+<button class="text-xs font-bold text-primary uppercase tracking-widest border-b border-primary/20 self-start pb-1">View Inventory Details</button>
+</div>
+</div>
+<!-- Recent Transactions Table (Curator's Grid Style) -->
+<div class="bg-surface-container-lowest">
+<div class="p-8 flex justify-between items-center">
+<h3 class="text-lg font-black tracking-tight">Recent Transactions</h3>
+<div class="flex gap-4">
+<button class="text-sm font-bold text-neutral-400 hover:text-on-surface transition-all">View All</button>
+<span class="material-symbols-outlined text-neutral-300">filter_list</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 bg-surface-container-low">
+<th class="px-8 py-4">Transaction ID</th>
+<th class="px-8 py-4">Archival Item</th>
+<th class="px-8 py-4">Collector / Client</th>
+<th class="px-8 py-4">Date</th>
+<th class="px-8 py-4">Amount</th>
+<th class="px-8 py-4 text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-neutral-50">
+<tr class="group hover:bg-surface-container-low transition-all">
+<td class="px-8 py-6 font-mono text-xs text-neutral-500">TX-90421</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest flex-shrink-0">
+<img alt="Silk Textile" class="w-full h-full object-cover" data-alt="Close up of red silk textile with intricate gold embroidery, luxurious texture, warm studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPXc_RF6YksfbMwN2ewFV_XA1Ij5vDpHb2JUUJPmhiABe1voZzJH7k2u8PQl_JOfidSaA3GvDpOEwbrBHPecjTLYTHK203xNvoQVOt7cwmJyj3IqvOpeM5_u97_6ypjMgIZleieiZPwKbh-GwjZS_wZ4lZwdSJ9FYR0MM3pZRtRbahlZRyCGEzbTjLlzIKGKrtvKDn8C9ezupLNZ64eIJZ3uYTyNckpG0r1Kg2YfEH061nq0KyRz9PDczyZheNq4Q-B55C_d009Q9A"/>
+</div>
+<span class="font-bold text-sm">Ceremonial Silk Songket</span>
+</div>
+</td>
+<td class="px-8 py-6 text-sm font-medium">National Museum Jakarta</td>
+<td class="px-8 py-6 text-sm text-neutral-500">Oct 24, 2023</td>
+<td class="px-8 py-6 text-sm font-black text-primary">Rp 45.000.000</td>
+<td class="px-8 py-6 text-right">
+<span class="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-emerald-50 text-emerald-700">Completed</span>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container-low transition-all">
+<td class="px-8 py-6 font-mono text-xs text-neutral-500">TX-90422</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest flex-shrink-0">
+<img alt="Antique Batik" class="w-full h-full object-cover" data-alt="Macro photography of hand-drawn indigo batik fabric, organic patterns, natural linen texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuPsxlpIiskkXPxGAc5qrXJCIaObNDlMWJZpJ3G-QJmcznex_u39X619p-mJe9NuwdISkZ7F_JoFfzq5VvHvYd5VgqRZjdJxiX58xDsbaVx4fEmBnjAJTPbn-LFxTMRg056Dyz7E51YP9jK94rvU2-HQW8c_HpRIfnKN8Y3lJJLFml_KNDW-U-lUxxUNuz4ejEajjAB2k2idBm_Xbo-VRU6V5q2uoiHEtRvTgkh_F3BIEvM2Yqtkh6zyLV3f0zE-EKzhfM95zPqmYK"/>
+</div>
+<span class="font-bold text-sm">Indigo Tulis Batik (Late 19th C.)</span>
+</div>
+</td>
+<td class="px-8 py-6 text-sm font-medium">H. Wirawan Private Coll.</td>
+<td class="px-8 py-6 text-sm text-neutral-500">Oct 22, 2023</td>
+<td class="px-8 py-6 text-sm font-black text-primary">Rp 128.500.000</td>
+<td class="px-8 py-6 text-right">
+<span class="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-amber-50 text-amber-700">Processing</span>
+</td>
+</tr>
+<tr class="group hover:bg-surface-container-low transition-all">
+<td class="px-8 py-6 font-mono text-xs text-neutral-500">TX-90423</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest flex-shrink-0">
+<img alt="Ikat Textile" class="w-full h-full object-cover" data-alt="Woven ikat textile with geometric earth-toned patterns, rustic hand-spun cotton feel, dramatic shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQSmBCBp8GIWwRx1o-SH1JtMRUSlQK6W0kyLadMs1vreklqXxFW2647iqRd-xMaXeshaNV4Ymnznys5SaoflP7Db0L1NyXFEWsexzPmcQXnuLZTqPe5u9e1TEO30sXUm7n9jHL4fUQjgBNkc2fXdf5kHjCXxa9wXMu9SIahezeJoL-lzNJ8uZKEpm-d1YLVif4xYVcV_GMiRjg4DD_9GrB2MSSAlneSiZCnaYTCoDF0UvwRxG4koiehKkHMfhVRhwChkr1hO1qZYCI"/>
+</div>
+<span class="font-bold text-sm">Sumba East Ikat Tapestry</span>
+</div>
+</td>
+<td class="px-8 py-6 text-sm font-medium">Heritage Foundation</td>
+<td class="px-8 py-6 text-sm text-neutral-500">Oct 20, 2023</td>
+<td class="px-8 py-6 text-sm font-black text-primary">Rp 12.200.000</td>
+<td class="px-8 py-6 text-right">
+<span class="inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-emerald-50 text-emerald-700">Completed</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="flex justify-between items-center px-8 py-6 w-full mt-12 bg-neutral-50 border-t border-neutral-100 font-manrope text-xs tracking-widest uppercase text-neutral-400">
+<div>© 2024 Textile Archive Digital Curator. All rights reserved.</div>
+<div class="flex gap-8">
+<a class="hover:text-neutral-900 transition-opacity" href="#">Privacy Policy</a>
+<a class="hover:text-neutral-900 transition-opacity" href="#">Terms of Service</a>
+<a class="hover:text-neutral-900 transition-opacity" href="#">System Status</a>
+</div>
+</footer>
+</main>
+</body></html>

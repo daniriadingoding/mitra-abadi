@@ -1,0 +1,50 @@
+1. Pendahuluan
+1.1 Tujuan Produk
+Membangun platform web-based terpusat untuk Mitra Abadi yang berfungsi ganda: sebagai katalog digital interaktif bagi pelanggan untuk melakukan pemesanan via WhatsApp, dan sebagai Sistem Informasi Manajemen (SIM) bagi admin untuk mengelola stok kain fisik, pesanan, serta pembuatan dokumen transaksi (invoice).
+
+1.2 Masalah yang Diselesaikan
+- Pelanggan kesulitan melihat visual, detail, dan ketersediaan stok bahan kain secara real-time.
+- Pencatatan stok manual (konversi roll ke meter) dan pembuatan nota transaksi rentan terhadap human error.
+- Tidak ada database terpusat untuk melacak riwayat pembelian pelanggan tetap (seperti konveksi/penjahit).
+
+2. Target Pengguna (User Personas)
+- Pengunjung/Pelanggan (B2C & B2B): Penjahit rumahan, pemilik konveksi, atau desainer pakaian yang membutuhkan bahan baku kain. Mereka mencari kemudahan melihat katalog dan lebih suka bertransaksi/negosiasi langsung melalui WhatsApp.
+- Admin / Staf Gudang: Operator sistem yang bertugas melayani chat WhatsApp, mencatat pesanan, memotong kain, mengelola pengiriman, dan memastikan data stok di sistem sesuai dengan fisik gudang.
+
+3. Cakupan Produk (Product Scope)
+Produk ini adalah aplikasi web (responsive untuk desktop dan mobile) yang terdiri dari dua sisi utama:
+- Front-end (Publik): Katalog produk tanpa sistem keranjang belanja (shopping cart) dan payment gateway. Semua pemesanan diakhiri dengan redirect ke WhatsApp.
+- Back-end (Admin): Panel kontrol yang memiliki fungsi Point of Sale (POS) internal untuk mencatat order dari WA, manajemen inventaris yang mendukung konversi satuan kain, dan generator laporan bulanan.
+
+4. Rincian Fitur Utama (Key Features)
+4.1 Modul Katalog & Pemesanan Publik
+- Katalog Interaktif: Menampilkan foto produk (mendukung zoom tekstur), harga per meter, deskripsi gramasi/lebar kain, dan opsi warna.
+- Filter Pencarian: Berdasarkan kategori bahan, motif, dan warna.
+- WhatsApp Checkout Engine: Form input jumlah meter yang otomatis menghasilkan URL API WhatsApp berisikan ringkasan pesanan (pre-filled message).
+
+4.2 Modul Manajemen Inventaris (Back-end)
+- Sistem Konversi Satuan: Input barang masuk berupa roll, otomatis terkonversi menjadi satuan ukur terkecil (meter/yard) di database.
+- Stock Opname: Sinkronisasi penyesuaian angka stok sistem dengan ketersediaan fisik.
+- Low Stock Alert: Peringatan visual di dasbor saat persediaan menipis.
+
+4.3 Modul Order & Transaksi (Back-end)
+- Manual Order Entry: Fitur kasir bagi admin untuk memindahkan deal dari chat WA ke dalam sistem.
+- Auto-Stock Deduction: Stok otomatis terpotong saat status pesanan diubah menjadi "Diproses".
+- Invoice & Label Generator: Sistem menghasilkan PDF struk/faktur tagihan dan label pengiriman yang siap cetak atau dikirim via chat.
+
+4.4 Modul Laporan (Back-end)
+- Sales Report: Ekspor data pendapatan dan volume penjualan berdasarkan rentang tanggal.
+
+5. Alur Pengguna (User Flow)
+1. Pelanggan membuka website → Mencari bahan kain → Memilih warna dan jumlah (meter) → Klik "Pesan via WA".
+2. Pelanggan diarahkan ke aplikasi WhatsApp dan mengirim pesan otomatis ke Admin.
+3. Admin mengonfirmasi ketersediaan dan harga lewat chat.
+4. Admin login ke panel web → Masuk ke menu "Buat Pesanan Baru" → Memasukkan data pelanggan dan produk → Klik "Simpan & Buat Invoice".
+5. Sistem mengurangi stok di gudang dan mengunduh PDF Invoice.
+6. Admin mengirim Invoice ke pelanggan via WA → Pelanggan transfer → Admin mengubah status menjadi "Dikirim".
+
+6. Kebutuhan Non-Fungsional (Non-Functional Requirements)
+- Performa: Waktu muat halaman (page load) katalog tidak boleh lebih dari 3 detik.
+- Responsivitas: Website harus 100% mobile-friendly.
+- Keamanan: Sesi login Admin dilindungi dengan enkripsi password.
+- Desain: Clean.

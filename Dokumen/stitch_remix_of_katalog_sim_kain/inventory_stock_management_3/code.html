@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mitra Abadi | Admin Inventory Terminal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c2c6d4",
+                        "on-secondary-fixed-variant": "#474746",
+                        "secondary-container": "#e2dfde",
+                        "tertiary-fixed": "#ffdbcf",
+                        "surface-dim": "#d9dadb",
+                        "inverse-on-surface": "#f0f1f2",
+                        "background": "#f8f9fa",
+                        "primary": "#003f87",
+                        "on-primary-container": "#bbd0ff",
+                        "inverse-primary": "#acc7ff",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#001a40",
+                        "tertiary": "#772600",
+                        "on-tertiary-fixed": "#380d00",
+                        "error": "#ba1a1a",
+                        "secondary": "#5f5e5e",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "on-tertiary-container": "#ffc2ac",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container": "#edeeef",
+                        "primary-fixed": "#d7e2ff",
+                        "surface-variant": "#e1e3e4",
+                        "primary-fixed-dim": "#acc7ff",
+                        "on-tertiary-fixed-variant": "#802a00",
+                        "inverse-surface": "#2e3132",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-background": "#191c1d",
+                        "on-surface-variant": "#424752",
+                        "tertiary-container": "#9f3500",
+                        "primary-container": "#0056b3",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#636262",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#115cb9",
+                        "on-primary-fixed-variant": "#004491",
+                        "on-primary": "#ffffff",
+                        "outline": "#727784",
+                        "surface-bright": "#f8f9fa",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#191c1d",
+                        "surface": "#f8f9fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<aside class="flex flex-col h-full border-r border-slate-200 dark:border-slate-800 h-screen w-64 fixed left-0 top-0 bg-slate-100 dark:bg-slate-950 z-40">
+<div class="px-8 py-8">
+<h1 class="text-lg font-manrope font-black text-blue-900 dark:text-white">Mitra Abadi</h1>
+<p class="font-inter text-xs uppercase tracking-widest font-bold text-slate-500 mt-1">Admin Terminal</p>
+</div>
+<nav class="flex-grow mt-4">
+<div class="space-y-1">
+<a class="flex items-center text-slate-500 dark:text-slate-500 hover:text-blue-600 px-8 py-3 font-inter text-xs uppercase tracking-widest font-bold transition-all hover:bg-white/50 dark:hover:bg-slate-800/50 group" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center bg-white dark:bg-slate-900 text-blue-700 dark:text-blue-300 rounded-l-full ml-4 pl-4 py-3 font-inter text-xs uppercase tracking-widest font-bold translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="inventory_2">inventory_2</span>
+                    Inventory
+                </a>
+<a class="flex items-center text-slate-500 dark:text-slate-500 hover:text-blue-600 px-8 py-3 font-inter text-xs uppercase tracking-widest font-bold transition-all hover:bg-white/50 dark:hover:bg-slate-800/50 group" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="receipt_long">receipt_long</span>
+                    Orders
+                </a>
+<a class="flex items-center text-slate-500 dark:text-slate-500 hover:text-blue-600 px-8 py-3 font-inter text-xs uppercase tracking-widest font-bold transition-all hover:bg-white/50 dark:hover:bg-slate-800/50 group" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="group">group</span>
+                    Customers
+                </a>
+<a class="flex items-center text-slate-500 dark:text-slate-500 hover:text-blue-600 px-8 py-3 font-inter text-xs uppercase tracking-widest font-bold transition-all hover:bg-white/50 dark:hover:bg-slate-800/50 group" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="analytics">analytics</span>
+                    Reports
+                </a>
+</div>
+</nav>
+<div class="px-8 mb-6">
+<button class="w-full py-3 rounded-lg bg-gradient-to-r from-primary to-primary-container text-white font-inter text-xs uppercase tracking-widest font-bold shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity">
+                New Entry
+            </button>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 pt-4 pb-8">
+<a class="flex items-center text-slate-500 dark:text-slate-500 hover:text-blue-600 px-8 py-3 font-inter text-xs uppercase tracking-widest font-bold transition-all group" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="settings">settings</span>
+                Settings
+            </a>
+<a class="flex items-center text-slate-500 dark:text-slate-500 hover:text-blue-600 px-8 py-3 font-inter text-xs uppercase tracking-widest font-bold transition-all group" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="help">help</span>
+                Support
+            </a>
+</div>
+</aside>
+<main class="ml-64 min-h-screen">
+<header class="flex items-center justify-between px-10 py-8">
+<div class="space-y-1">
+<h2 class="text-3xl font-manrope font-extrabold tracking-tight text-on-surface">Fabric Archive</h2>
+<p class="text-sm font-body text-on-surface-variant">Global Inventory Management &amp; Meterage Conversion</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg" data-icon="search">search</span>
+<input class="bg-surface-container-lowest border-none rounded-lg pl-10 pr-4 py-2.5 text-sm font-body w-64 focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline italic" placeholder="Search archive SKU..." type="text"/>
+</div>
+<button class="flex items-center gap-2 bg-tertiary px-6 py-2.5 rounded-lg text-white font-inter text-xs uppercase tracking-widest font-bold shadow-lg shadow-tertiary/20 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm" data-icon="inventory">inventory</span>
+                    Stock Opname
+                </button>
+</div>
+</header>
+<section class="px-10 pb-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<p class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant mb-2">Total Inventory</p>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-manrope font-black text-primary">2,482</span>
+<span class="text-xs font-body text-secondary">Rolls</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<p class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant mb-2">Total Meterage</p>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-manrope font-black text-primary">124,100</span>
+<span class="text-xs font-body text-secondary">Meters</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 border-l-4 border-l-tertiary">
+<p class="text-[10px] font-label font-bold uppercase tracking-widest text-tertiary mb-2">Low Stock Alerts</p>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-manrope font-black text-tertiary">14</span>
+<span class="text-xs font-body text-secondary">SKUs</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<p class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant mb-2">Valuation</p>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-manrope font-black text-primary">$1.2M</span>
+<span class="text-xs font-body text-secondary">USD</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/10">
+<th class="px-8 py-5 text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant">Product Details</th>
+<th class="px-6 py-5 text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant">Material Type</th>
+<th class="px-6 py-5 text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant">Stock (Rolls)</th>
+<th class="px-6 py-5 text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant text-right">Conv. (Meters)</th>
+<th class="px-6 py-5 text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant">Status</th>
+<th class="px-8 py-5 text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-slate-200 rounded-sm overflow-hidden flex-shrink-0">
+<img alt="Fabric swatch" class="w-full h-full object-cover" data-alt="Close up of high-quality premium navy blue silk fabric texture with soft ripples and elegant lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDndMJgRHUOZPVYS3k_XQeR2PD9d8HXD6ZJYNg-a3LP0mh_SjwtD-GB2tGy98muKu7vJfDeQkV9KCTDmlGcUI4yuU3dXyOI_df3mdKw2FYmHdTkL1MgA2L3Y3rD6waZB5y7lgIDgZGR9BQNHtODUPq8ACzC8JgTbU70nyIaVUK_Mp2PduD4uDV9LhD1vGettkmRqBw1FFmSr8LG3BoDJWsC1Xl8KBp9vaGqAcM6HWk--yyFdNszpTReZg970-ocB-znaywrHEEm2_of"/>
+</div>
+<div>
+<div class="text-sm font-manrope font-bold text-on-surface">Midnight Silk Twill</div>
+<div class="text-[10px] font-label text-outline uppercase tracking-wider">SKU: MST-2024-NV</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-6 text-sm font-body text-secondary">Premium Mulberry Silk</td>
+<td class="px-6 py-6 text-sm font-manrope font-bold text-on-surface">12</td>
+<td class="px-6 py-6 text-sm font-body text-right text-on-surface-variant">600.00 m</td>
+<td class="px-6 py-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-container text-[10px] font-label font-bold uppercase tracking-wider text-on-primary">In Transit</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="edit_note">edit_note</span>
+</button>
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-slate-200 rounded-sm overflow-hidden flex-shrink-0">
+<img alt="Fabric swatch" class="w-full h-full object-cover" data-alt="macro photograph of coarse organic linen textile in a warm oatmeal color with visible weave patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmgBKVQGwWC3zRqq92j1zWxdbH5GiTXqJAVJecxiGnnOh6iDDs5PdJfrkuD27TTAOeP7o1rr7h2szx5F6XOMoAl-Whqp0ER_y04-HS_MDQSsoHUXj3v5PZX8vqvPkojT2rflwghXYYdOPqaPHkbuj5tjztc7Ye8Ba-LvuR9q3Aha33R9yWEeKYHdoftsn1MY-nQAEDa-MXOLSQ4Rimqmhy8QqkqkNd8PMVzROiZiu9HuOilkFb3b0jShw7I3VDOW8UCTKhLm_NHT-4"/>
+</div>
+<div>
+<div class="text-sm font-manrope font-bold text-on-surface">Oatmeal Organic Linen</div>
+<div class="text-[10px] font-label text-outline uppercase tracking-wider">SKU: OOL-8832-BG</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-6 text-sm font-body text-secondary">100% Eco-Linen</td>
+<td class="px-6 py-6 text-sm font-manrope font-bold text-tertiary">3</td>
+<td class="px-6 py-6 text-sm font-body text-right text-on-surface-variant">150.00 m</td>
+<td class="px-6 py-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-tertiary-container text-[10px] font-label font-bold uppercase tracking-wider text-on-tertiary">Low Stock</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="edit_note">edit_note</span>
+</button>
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-slate-200 rounded-sm overflow-hidden flex-shrink-0">
+<img alt="Fabric swatch" class="w-full h-full object-cover" data-alt="textured heavy cotton canvas fabric in a deep forest green color with industrial feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn5VEh5c3bFvmbjh6Neb3vunJjF4ZeukHJYlCe7hsA41E6LrJDtB96xq5_QqNGFCKHF0_jMyD1unda-pALVIpRlNs9cLtEV1vTxecL45vyD576E69d10J_2m3_QKV1uSWX_V5-SbozUpeRODBr13h-o7cb8GlnNzYY24eHOz11jAWQdecKYEwclWM1ft8SPOyhsAE7vi6HKfFtiyGXx94Y0KfJ-gmuB2JdqArpmOiunbZtGy5-P00_WCD6YMWwO5_mV9OJ3cOuk-CQ"/>
+</div>
+<div>
+<div class="text-sm font-manrope font-bold text-on-surface">Forest Heavy Canvas</div>
+<div class="text-[10px] font-label text-outline uppercase tracking-wider">SKU: FHC-1109-GR</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-6 text-sm font-body text-secondary">Industrial Grade Cotton</td>
+<td class="px-6 py-6 text-sm font-manrope font-bold text-on-surface">45</td>
+<td class="px-6 py-6 text-sm font-body text-right text-on-surface-variant">2,250.00 m</td>
+<td class="px-6 py-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container-high text-[10px] font-label font-bold uppercase tracking-wider text-on-surface">Stable</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="edit_note">edit_note</span>
+</button>
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-slate-200 rounded-sm overflow-hidden flex-shrink-0">
+<img alt="Fabric swatch" class="w-full h-full object-cover" data-alt="elegant soft cashmere wool texture in a light charcoal grey color with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPsKGY7Fm-J9xSZVq58OzxT1DjyIKqlIzcZIuEQar6lQm3U5iGDupzd6-xB1rHhTNj9VlT4lqxcOl7ws_2fCUoF5qDDyswbZaId-B4iVEEWmo45Vu_zBDJCkvwYZPYOw1V6q6UHezzhcErRijtZRhRFFewTthh056aSDNqfFjY2mdP1ivoTzyhhIuuwDw5gg7xmYcDQrHWg25z0WA7jQ1qhKqoX_p02tP_LH0CwDoyPF-IBRG2SA1wbga-xozqn0czIZTuNEYutvfs"/>
+</div>
+<div>
+<div class="text-sm font-manrope font-bold text-on-surface">Charcoal Cashmere Blend</div>
+<div class="text-[10px] font-label text-outline uppercase tracking-wider">SKU: CCB-4402-GY</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-6 text-sm font-body text-secondary">Wool / Cashmere Mix</td>
+<td class="px-6 py-6 text-sm font-manrope font-bold text-on-surface">8</td>
+<td class="px-6 py-6 text-sm font-body text-right text-on-surface-variant">400.00 m</td>
+<td class="px-6 py-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-container text-[10px] font-label font-bold uppercase tracking-wider text-on-primary">In Transit</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="edit_note">edit_note</span>
+</button>
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-slate-200 rounded-sm overflow-hidden flex-shrink-0">
+<img alt="Fabric swatch" class="w-full h-full object-cover" data-alt="luxurious ruby red velvet textile with deep shadows and vibrant highlights reflecting light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWOzpHRL0d1aB6_1dIt_UNrJ0V1g5qFK06A9wsqdNuh2nInQ0uLFLUeqLJxZrZ_Oei7B4sMCjWqvdwrhaDo0k3H83O0KQsH_31sNs6c2yT9JHs36B_wBFSfqMcwUKHLgFI-9yW5cPQZXu3J0TU0dnMKoN-UctAey3mCveEYnNLkf9bgB3uOUeKXshEjb_MsjkPI7GWfLhkl-xRs8s4DTNPM_AaZOmF7p2bhJ7gLfrAnhrFPUGvdS8vh8Vgz6_qvYOw_dx0ZNTACklj"/>
+</div>
+<div>
+<div class="text-sm font-manrope font-bold text-on-surface">Royal Crimson Velvet</div>
+<div class="text-[10px] font-label text-outline uppercase tracking-wider">SKU: RCV-9910-RD</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-6 text-sm font-body text-secondary">Synthetic High-Pile Velvet</td>
+<td class="px-6 py-6 text-sm font-manrope font-bold text-tertiary">1</td>
+<td class="px-6 py-6 text-sm font-body text-right text-on-surface-variant">50.00 m</td>
+<td class="px-6 py-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-tertiary-container text-[10px] font-label font-bold uppercase tracking-wider text-on-tertiary">Critical</span>
+</td>
+<td class="px-8 py-6 text-right">
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="edit_note">edit_note</span>
+</button>
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="bg-surface-container-low px-8 py-4 flex items-center justify-between">
+<p class="text-xs font-body text-on-surface-variant">Showing 1 to 5 of 124 entries</p>
+<div class="flex gap-2">
+<button class="px-4 py-1.5 bg-surface-container-lowest text-xs font-bold font-inter uppercase tracking-widest text-on-surface-variant rounded-lg border border-outline-variant/10 hover:bg-white transition-colors">Prev</button>
+<button class="px-4 py-1.5 bg-primary text-xs font-bold font-inter uppercase tracking-widest text-white rounded-lg hover:opacity-90 transition-opacity">Next</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="ml-64 w-[calc(100%-16rem)] border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+<div class="flex justify-between items-center px-12 py-8 w-full">
+<p class="font-inter text-[10px] uppercase tracking-widest text-slate-400">© 2024 Mitra Abadi Textile Archivist. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="font-inter text-[10px] uppercase tracking-widest text-slate-400 hover:text-blue-900 dark:hover:text-white transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="font-inter text-[10px] uppercase tracking-widest text-slate-400 hover:text-blue-900 dark:hover:text-white transition-colors duration-300" href="#">Terms of Service</a>
+<a class="font-inter text-[10px] uppercase tracking-widest text-slate-400 hover:text-blue-900 dark:hover:text-white transition-colors duration-300" href="#">WhatsApp Support</a>
+</div>
+</div>
+</footer>
+</body></html>

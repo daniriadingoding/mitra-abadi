@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#e1e3e4",
+                    "on-secondary-fixed-variant": "#44474e",
+                    "secondary-container": "#f1f0f4",
+                    "tertiary-fixed": "#ffdad9",
+                    "surface-dim": "#ded9d9",
+                    "inverse-on-surface": "#f2f0f0",
+                    "background": "#fdf8f8",
+                    "primary": "#e61e25",
+                    "on-primary-container": "#410002",
+                    "inverse-primary": "#ffb4ab",
+                    "surface-container-high": "#ebe7e7",
+                    "secondary-fixed-dim": "#ccc4c3",
+                    "on-secondary-fixed": "#1d1a1a",
+                    "on-error-container": "#410002",
+                    "on-primary-fixed": "#410002",
+                    "tertiary": "#775652",
+                    "on-tertiary-fixed": "#2c1512",
+                    "error": "#ba1a1a",
+                    "secondary": "#605d5c",
+                    "tertiary-fixed-dim": "#e7bdb8",
+                    "on-tertiary-container": "#2c1512",
+                    "surface-container-low": "#f7f3f2",
+                    "surface-container": "#f1edec",
+                    "primary-fixed": "#ffdad6",
+                    "surface-variant": "#f5dedd",
+                    "primary-fixed-dim": "#ffb4ab",
+                    "on-tertiary-fixed-variant": "#5d3f3b",
+                    "inverse-surface": "#313030",
+                    "secondary-fixed": "#e9e0df",
+                    "on-background": "#1c1b1b",
+                    "on-surface-variant": "#534342",
+                    "tertiary-container": "#ffdad9",
+                    "primary-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#e6e1e1",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#1d1a1a",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#e61e25",
+                    "on-primary-fixed-variant": "#93000a",
+                    "on-primary": "#ffffff",
+                    "outline": "#857371",
+                    "surface-bright": "#fdf8f8",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#1c1b1b",
+                    "surface": "#fdf8f8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "1rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-editorial-tight { letter-spacing: -0.02em; }
+        .metadata-caps { text-transform: uppercase; letter-spacing: 0.1em; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar (Shared Component COMPONENTS_11) -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/90 dark:bg-stone-950/90 backdrop-blur-md border-b border-stone-200/20">
+<div class="flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-12">
+<span class="text-2xl font-bold tracking-tighter text-red-600 dark:text-red-500 font-headline">Mitra Abadi</span>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-manrope tracking-tight text-sm font-semibold text-red-600 dark:text-red-500 border-b-2 border-red-600 pb-1" href="#">Catalog</a>
+<a class="font-manrope tracking-tight text-sm font-semibold text-stone-600 dark:text-stone-400 hover:text-red-500 transition-colors duration-300" href="#">Collections</a>
+<a class="font-manrope tracking-tight text-sm font-semibold text-stone-600 dark:text-stone-400 hover:text-red-500 transition-colors duration-300" href="#">About</a>
+<a class="font-manrope tracking-tight text-sm font-semibold text-stone-600 dark:text-stone-400 hover:text-red-500 transition-colors duration-300" href="#">Contact</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 text-sm">search</span>
+<input class="pl-10 pr-4 py-2 bg-stone-100 dark:bg-stone-900 border-none rounded-full text-xs font-label focus:ring-2 focus:ring-red-600/20 w-64" placeholder="Search archives..." type="text"/>
+</div>
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-stone-600 dark:text-stone-400 hover:text-red-600 transition-colors">shopping_cart</button>
+<button class="material-symbols-outlined text-stone-600 dark:text-stone-400 hover:text-red-600 transition-colors">account_circle</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-12 px-8 max-w-[1600px] mx-auto min-h-screen">
+<!-- Header & Category Filters -->
+<header class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<span class="label-md font-label metadata-caps text-primary font-extrabold text-[10px] mb-3 block">Premium Textile Archivist</span>
+<h1 class="text-4xl md:text-6xl font-headline font-extrabold text-on-surface text-editorial-tight">The Fabric Catalog</h1>
+<p class="mt-6 text-on-surface-variant max-w-lg leading-relaxed text-sm">A curated collection of high-performance textiles, from heavy-duty industrial knits to soft-touch sustainable cottons.</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="px-6 py-2 rounded bg-primary text-white font-label text-[10px] font-bold metadata-caps shadow-sm">All Materials</button>
+<button class="px-6 py-2 rounded bg-surface-container-low text-on-surface-variant hover:bg-primary hover:text-white font-label text-[10px] font-bold metadata-caps transition-all">Cotton</button>
+<button class="px-6 py-2 rounded bg-surface-container-low text-on-surface-variant hover:bg-primary hover:text-white font-label text-[10px] font-bold metadata-caps transition-all">Linen</button>
+<button class="px-6 py-2 rounded bg-surface-container-low text-on-surface-variant hover:bg-primary hover:text-white font-label text-[10px] font-bold metadata-caps transition-all">Knit</button>
+<button class="px-6 py-2 rounded bg-surface-container-low text-on-surface-variant hover:bg-primary hover:text-white font-label text-[10px] font-bold metadata-caps transition-all">Specialty</button>
+</div>
+</header>
+<div class="flex flex-col lg:flex-row gap-16">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-64 flex-shrink-0 space-y-12">
+<section>
+<h3 class="font-label metadata-caps text-[10px] font-extrabold text-on-surface-variant mb-6 border-b border-outline-variant pb-2">Primary Palette</h3>
+<div class="grid grid-cols-5 gap-3">
+<button class="w-8 h-8 rounded-sm bg-[#1e1e1e] ring-2 ring-offset-2 ring-transparent hover:ring-primary transition-all shadow-inner"></button>
+<button class="w-8 h-8 rounded-sm bg-[#f5f5dc] ring-2 ring-offset-2 ring-transparent hover:ring-primary transition-all shadow-inner"></button>
+<button class="w-8 h-8 rounded-sm bg-[#4a5d4e] ring-2 ring-offset-2 ring-transparent hover:ring-primary transition-all shadow-inner"></button>
+<button class="w-8 h-8 rounded-sm bg-[#7a4b3a] ring-2 ring-offset-2 ring-transparent hover:ring-primary transition-all shadow-inner"></button>
+<button class="w-8 h-8 rounded-sm bg-[#E61E25] ring-2 ring-offset-2 ring-transparent hover:ring-primary transition-all shadow-inner"></button>
+<button class="w-8 h-8 rounded-sm bg-[#e3e3e3] ring-2 ring-offset-2 ring-transparent hover:ring-primary transition-all shadow-inner"></button>
+<button class="w-8 h-8 rounded-sm bg-[#772600] ring-2 ring-offset-2 ring-transparent hover:ring-primary transition-all shadow-inner"></button>
+<button class="w-8 h-8 rounded-sm bg-[#b22222] ring-2 ring-offset-2 ring-transparent hover:ring-primary transition-all shadow-inner"></button>
+<button class="w-8 h-8 rounded-sm bg-white ring-1 ring-stone-200 hover:ring-primary transition-all shadow-inner"></button>
+<button class="w-8 h-8 rounded-sm bg-stone-400 ring-2 ring-offset-2 ring-transparent hover:ring-primary transition-all shadow-inner"></button>
+</div>
+</section>
+<section>
+<h3 class="font-label metadata-caps text-[10px] font-extrabold text-on-surface-variant mb-6 border-b border-outline-variant pb-2">Technical Specs</h3>
+<div class="space-y-4">
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-[11px] font-label metadata-caps text-on-surface group-hover:text-primary transition-colors">Sustainable / Organic</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-[11px] font-label metadata-caps text-on-surface group-hover:text-primary transition-colors">Industrial Grade</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-[11px] font-label metadata-caps text-on-surface group-hover:text-primary transition-colors">Limited Production</span>
+</label>
+</div>
+</section>
+<section class="p-6 bg-stone-100 rounded-sm border-l-4 border-primary">
+<p class="text-[10px] font-label metadata-caps text-primary font-black mb-2">Curator's Note</p>
+<p class="text-xs text-on-surface-variant leading-relaxed italic">"All swatches are archived at 1200dpi to ensure digital color accuracy matches physical inventory."</p>
+</section>
+</aside>
+<!-- Catalog Grid -->
+<div class="flex-grow">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-16 gap-x-12">
+<!-- Fabric Card 1 -->
+<div class="group flex flex-col">
+<div class="relative overflow-hidden aspect-[4/5] bg-surface-container mb-5 rounded-sm">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up texture of high-quality navy blue cotton combed fabric" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPhDUcd6ZQQQrdqQY7O9fkMBBtPQ7UEosuE67pN_ahKhUJnSm-CRMJg5kZEzEQ6_t4WDn2THmoJzAVj1Pt8EHBV9eveRnwWE3H9jb7zJWY8EoGVZRqmNfglJdpFSFftXDQ-uctW7MWnuLRnf9jVChsaqs_c32Dkp1rHsb-S1wagOjLw_aUTKLXDJBUTsf7I-ee4HER2Q-njBn4IvgfJcSzGCGTrhMx4GOHn5iFwfEERKHT0PxB5Y0WD_UlFKn7LWJt9FpwAvrfkOGr"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-white/90 backdrop-blur text-[9px] font-label metadata-caps font-black text-primary shadow-sm">Core Stock</span>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-baseline">
+<h2 class="text-xl font-headline font-extrabold text-on-surface group-hover:text-primary transition-colors">Cotton Combed 30s</h2>
+<span class="text-lg font-headline font-bold text-primary">$12.50</span>
+</div>
+<div class="flex gap-6 pt-4 border-t border-outline-variant/30">
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Weight</span>
+<span class="text-[11px] font-body font-bold">180 GSM</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Width</span>
+<span class="text-[11px] font-body font-bold">72"</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Ref ID</span>
+<span class="text-[11px] font-body font-bold">MA-CT-30S</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Fabric Card 2 -->
+<div class="group flex flex-col">
+<div class="relative overflow-hidden aspect-[4/5] bg-surface-container mb-5 rounded-sm">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Raw texture of beige heavy linen fabric" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7iLQpGSnGphDw82Le3ZodtNIhtDuvTbAOLGj8R_qRrQxDknm6uXX_MbSzmNNN9jsqkOuHY3wRO4ipACZwsqalXeT9SG6SsP26e0rgnARoPsOO_8XHdOE6hIesq1m94ICYCAbs49rmb0mYQyUat2cMblD3lw9OFWc-IAwJLH7vqSmMthL3m1ApOa73KOj6k7nqOBruMoazANjRVIYzzs642FphQlSwMTy8m0kbY-aAxm0T4I7SzVYEjq_osUOc6r0wIoze8b5jHmDl"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-primary text-white text-[9px] font-label metadata-caps font-black shadow-sm">Premium Archive</span>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-baseline">
+<h2 class="text-xl font-headline font-extrabold text-on-surface group-hover:text-primary transition-colors">Vintage Washed Linen</h2>
+<span class="text-lg font-headline font-bold text-primary">$24.00</span>
+</div>
+<div class="flex gap-6 pt-4 border-t border-outline-variant/30">
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Weight</span>
+<span class="text-[11px] font-body font-bold">210 GSM</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Width</span>
+<span class="text-[11px] font-body font-bold">58"</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Ref ID</span>
+<span class="text-[11px] font-body font-bold">MA-LN-VW</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Fabric Card 3 -->
+<div class="group flex flex-col">
+<div class="relative overflow-hidden aspect-[4/5] bg-surface-container mb-5 rounded-sm">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Detailed view of charcoal grey technical jersey knit fabric" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuTlDUud90HVv0VsNJtYtkF3VwfQMQtcxIXoCEogmeNr71S4Sc5w2qafg69Rz2kZNgKJCqxDW2tWZ3Qv4I7RKjp-BwhlBrsUyt9MXKuGnKadMaaCnG6PG2vd0Q4Ie7ABf89kkVzsozB1rHpd_QOz-iMgDTejjZzbLJKnr_6fma1xXhuHKc0WT8TIxHF8xOZhGjN3wvZYAJShPlATASabJmBhHFFFOhNsbxzlwic8_byejymTQcGXxtRA0XJDTsHgwqxl_QLmCJvmrH"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-white/90 backdrop-blur text-[9px] font-label metadata-caps font-black text-primary shadow-sm">High-Stretch</span>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-baseline">
+<h2 class="text-xl font-headline font-extrabold text-on-surface group-hover:text-primary transition-colors">Tech-Jersey Sport</h2>
+<span class="text-lg font-headline font-bold text-primary">$18.25</span>
+</div>
+<div class="flex gap-6 pt-4 border-t border-outline-variant/30">
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Weight</span>
+<span class="text-[11px] font-body font-bold">240 GSM</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Width</span>
+<span class="text-[11px] font-body font-bold">60"</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Ref ID</span>
+<span class="text-[11px] font-body font-bold">MA-KN-TJ</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Fabric Card 4 -->
+<div class="group flex flex-col">
+<div class="relative overflow-hidden aspect-[4/5] bg-surface-container mb-5 rounded-sm">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Macro view of emerald green silk-satin fabric" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPArA2wgo13B-2rYpu2JaNRQmGDK4X7bj2ERo4mlyyab02YYd2jUmun17LdQw0TJ8t52YY3vDbXbfNvoz74HGhHk_Q3DeTPj9ue8I9og6bqDkT6p4p-9Bp80j8jbdQMabda6XVlfnzmEB5YhV8qOH6hZ7SGmGwaaSkCgNrlFJjC2lmRuqoshv1n3-4xguWRGfFw_djD1KrML6dxTTbQkqrzG1uwe_mPK7KkhaK-xDwX7Jpm6RWFNwT1Z1KjD3T79BXTuExzfmW8grs"/>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-baseline">
+<h2 class="text-xl font-headline font-extrabold text-on-surface group-hover:text-primary transition-colors">Mulberry Silk Satin</h2>
+<span class="text-lg font-headline font-bold text-primary">$45.00</span>
+</div>
+<div class="flex gap-6 pt-4 border-t border-outline-variant/30">
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Weight</span>
+<span class="text-[11px] font-body font-bold">85 GSM</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Width</span>
+<span class="text-[11px] font-body font-bold">44"</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Ref ID</span>
+<span class="text-[11px] font-body font-bold">MA-SK-MB</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Fabric Card 5 -->
+<div class="group flex flex-col">
+<div class="relative overflow-hidden aspect-[4/5] bg-surface-container mb-5 rounded-sm">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up of heavyweight denim indigo fabric" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjyDIENCr9zx9MQfqEXt8swrphMLiVwtouSWX2AaamZxvOekJUOuL7vxubt_MiZ6ys3-ZreUxMvKbdjqiGyr3lCJXa9LuDvlo1LfCbzxG4KJbGeb_-5wwMXTuOkr83m8RMmcL_6KinMzYvozX1VYLb8SsK5ZO_xxQrPvrQqeuopLncBVNnZoJLRuaOy6y96yPxD4i9MWDdG84rxzUXJJ1PA2GzTnOz99YtKwLWSG7zwG7Rce-4NQaVaCPw8EbeW5j4P1BymuXpepKN"/>
+<div class="absolute bottom-4 right-4">
+<span class="px-2 py-1 bg-primary text-white text-[8px] font-label metadata-caps font-bold rounded-sm">Low Stock</span>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-baseline">
+<h2 class="text-xl font-headline font-extrabold text-on-surface group-hover:text-primary transition-colors">Raw Selvedge Denim</h2>
+<span class="text-lg font-headline font-bold text-primary">$21.80</span>
+</div>
+<div class="flex gap-6 pt-4 border-t border-outline-variant/30">
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Weight</span>
+<span class="text-[11px] font-body font-bold">14.5 OZ</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Width</span>
+<span class="text-[11px] font-body font-bold">32"</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Ref ID</span>
+<span class="text-[11px] font-body font-bold">MA-DN-RS</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Fabric Card 6 -->
+<div class="group flex flex-col">
+<div class="relative overflow-hidden aspect-[4/5] bg-surface-container mb-5 rounded-sm">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Soft focused white organic cotton jersey folded" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCafTPK05ci3y1U4pP-Mm9vAVnc-jgQoGsi7skKtPyIZKjV36Iee3-9LzUb9J20mFtz_p31gmss6McV54qOgkmGls9DHPpC1acD9emPKHTuW_WKkDSx8xKeQ-5GjwK9ZGUKJadzCZV7CPFOyjXhPDZOnP0mYx05xsOGzjiuKmNlcmHcRqgxv95Rl7qZFiNF94qqMEa9CKKU9dWa9XmZwUSgvTFTNCB5Mwu6ldYx__1QBwWGvcVjORWWAyTFmiGTlrD5j64Y5n5gxcCj"/>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-baseline">
+<h2 class="text-xl font-headline font-extrabold text-on-surface group-hover:text-primary transition-colors">Eco-Jersey Organic</h2>
+<span class="text-lg font-headline font-bold text-primary">$15.40</span>
+</div>
+<div class="flex gap-6 pt-4 border-t border-outline-variant/30">
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Weight</span>
+<span class="text-[11px] font-body font-bold">160 GSM</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Width</span>
+<span class="text-[11px] font-body font-bold">68"</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-label metadata-caps text-on-surface-variant font-bold">Ref ID</span>
+<span class="text-[11px] font-body font-bold">MA-EC-OR</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More -->
+<div class="mt-20 flex justify-center">
+<button class="group flex items-center gap-3 px-10 py-4 bg-white border border-stone-200 rounded-sm hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+<span class="font-label metadata-caps text-[10px] font-extrabold">Load More From Archive</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-y-1 transition-transform">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component COMPONENTS_11) -->
+<footer class="w-full border-t border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-12 max-w-screen-2xl mx-auto">
+<span class="font-manrope text-sm leading-relaxed text-stone-500">© 2024 Mitra Abadi Textile Archive. All rights reserved.</span>
+<div class="flex gap-10 mt-6 md:mt-0">
+<a class="font-manrope text-sm text-stone-500 hover:underline decoration-red-600 underline-offset-4 transition-all" href="#">Privacy Policy</a>
+<a class="font-manrope text-sm text-stone-500 hover:underline decoration-red-600 underline-offset-4 transition-all" href="#">Terms of Service</a>
+<a class="font-manrope text-sm text-stone-500 hover:underline decoration-red-600 underline-offset-4 transition-all" href="#">Accessibility</a>
+<a class="font-manrope text-sm text-stone-500 hover:underline decoration-red-600 underline-offset-4 transition-all" href="#">Sustainability</a>
+</div>
+</div>
+</footer>
+<!-- FAB -->
+<div class="fixed bottom-28 right-8 w-72 bg-surface-container-lowest rounded-xl shadow-2xl border border-outline-variant overflow-hidden z-50 transform transition-all animate-in fade-in slide-in-from-bottom-4 duration-300">
+<div class="p-4 border-b border-outline-variant bg-surface-container-low">
+<p class="text-[10px] font-label metadata-caps text-on-surface-variant font-bold opacity-60">HOW CAN WE HELP?</p>
+</div>
+<div class="p-2">
+<!-- Chat with Admin -->
+<button class="w-full flex items-center gap-4 p-3 hover:bg-surface-container rounded-lg transition-colors text-left">
+<div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-green-600" style="font-variation-settings: 'FILL' 1;">chat</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Chat with Admin</p>
+<p class="text-[11px] text-on-surface-variant">WhatsApp Support</p>
+</div>
+</button>
+<!-- Chat with AI -->
+<button class="w-full flex items-center gap-4 p-3 hover:bg-surface-container rounded-lg transition-colors text-left">
+<div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Chat with AI Assistant</p>
+<p class="text-[11px] text-on-surface-variant">Instant Support 24/7</p>
+</div>
+</button>
+</div>
+</div><button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-40 group">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="absolute right-full mr-4 bg-on-surface text-white px-3 py-1 rounded text-[10px] metadata-caps font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Catalog Inquiry</span>
+</button>
+</body></html>

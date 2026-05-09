@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Database | Mitra Abadi Textile Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#fefdff",
+                        "on-tertiary-fixed-variant": "#004b71",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#fffdff",
+                        "surface-variant": "#e2e2e2",
+                        "on-surface-variant": "#5d3f3c",
+                        "surface-container": "#eeeeee",
+                        "on-secondary-fixed": "#410002",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary-fixed": "#cbe6ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#c00015",
+                        "on-primary-fixed": "#410002",
+                        "tertiary-fixed-dim": "#8ecdff",
+                        "on-secondary-container": "#6d0007",
+                        "primary-container": "#e61e25",
+                        "tertiary-container": "#007cb6",
+                        "surface-dim": "#dadada",
+                        "primary-fixed": "#ffdad6",
+                        "secondary-fixed": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "outline": "#926e6b",
+                        "surface-bright": "#f9f9f9",
+                        "inverse-surface": "#2f3131",
+                        "on-primary-fixed-variant": "#93000d",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "secondary-container": "#fd6d63",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#e7bdb8",
+                        "on-tertiary-fixed": "#001e30",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#ac322d",
+                        "background": "#f9f9f9",
+                        "surface-container-low": "#f3f3f3",
+                        "on-secondary-fixed-variant": "#8b1918",
+                        "inverse-on-surface": "#f1f1f1",
+                        "tertiary": "#006291",
+                        "primary-fixed-dim": "#ffb4ac",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#ffb4ac",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "primary": "#bd0015",
+                        "on-background": "#1a1c1c",
+                        "on-surface": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-white overflow-hidden">
+<div class="flex h-screen">
+<!-- SideNavBar - JSON Component Reference -->
+<aside class="flex flex-col h-full py-8 px-4 bg-stone-50 border-r border-zinc-200 w-64 shrink-0">
+<div class="mb-10 px-2">
+<h1 class="text-xl font-bold tracking-tighter text-zinc-900">Textile Archive</h1>
+<p class="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-medium">Digital Curator Admin</p>
+</div>
+<div class="mb-8 px-2 flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest rounded-full overflow-hidden">
+<img alt="Curator Avatar" data-alt="close-up portrait of a professional gallery curator in a minimal studio setting, soft neutral lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4V-OFka9zCtdrGn7DJzx5nVd5dAjrwuwxHbJ-nJrrWyMDTBZJFe0XxS1f9efmIJDgU51nzk5-Hmxr7NQfXtKlS0m1NphfTterurwUzTcp3azFyvksbbQ52e_H1ItROyUGu1xHK27dgq7n8tJBoj0-k8AIMyH-YkBeXeOLRAX9QmAwA8d6DmmBtxerSem3U2u_V8cJH06XOqPB1YWqL3DS2-SlD16U6IHVUVOBvP1oQlVQhvBNtgVMbaBrNFT5cDzQzjNs2Xkd9Y0r"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Admin User</p>
+<p class="text-xs text-zinc-500">Master Curator</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-zinc-500 hover:bg-zinc-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+<span class="text-sm font-medium">Archive</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-red-700 font-bold bg-zinc-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="text-sm">Curators</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-zinc-500 hover:bg-zinc-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span class="text-sm font-medium">Analysis</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-zinc-500 hover:bg-zinc-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">history_edu</span>
+<span class="text-sm font-medium">Ledger</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-zinc-500 hover:bg-zinc-200/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-2">
+<button class="w-full py-3 bg-primary-container text-white rounded-md text-sm font-bold shadow-sm active:scale-[0.98] transition-transform">
+                    New Entry
+                </button>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 flex flex-col min-w-0 overflow-hidden bg-surface">
+<!-- TopNavBar - JSON Component Reference -->
+<header class="flex justify-between items-center h-16 px-8 w-full bg-white/80 backdrop-blur-md border-b border-zinc-100 sticky top-0 z-10">
+<div class="flex items-center gap-6">
+<h2 class="text-lg font-semibold text-zinc-900">Archive Control</h2>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 text-sm">search</span>
+<input class="pl-10 pr-4 py-1.5 w-64 bg-surface-container-low border-none focus:ring-1 focus:ring-primary text-sm rounded-full transition-all" placeholder="Search customer database..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-zinc-400 hover:text-red-600 transition-colors p-2">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-zinc-400 hover:text-red-600 transition-colors p-2">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden ml-2">
+<img alt="Archive Logo" data-alt="minimalist geometric logo for a textile company using abstract fabric weave patterns in red and gray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8b4dhduLi5R6glUxYv6AqIHS69xnuXlYMqIf8lHcecsgxrekJDVpk2HHDZ-W9UAXSCGGs9QsYhzbhAOK4ncDvt2qqF43_ZvTbxZhQF-WkBVCc7TzqO09d2Jo6MA4Q4s6FwCPFChqv4Y5dYoDjFBf7DqmGRVxZOc23X1pyLX_fOS1N-Uxk-ZBya7n8qgt-jDw71_HcmiyiD6RQnpmVjUSAEPhHmLykM_oGrxixCbMyaZywtIa6K7R-RKe9w9DSim4HmLXTBZRiKIGm"/>
+</div>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-8 space-y-12">
+<!-- Page Title & Header -->
+<section class="flex justify-between items-end">
+<div>
+<h3 class="text-4xl font-bold tracking-tight text-on-surface mb-2">Customer Ledger</h3>
+<p class="text-zinc-500 max-w-md leading-relaxed">A curated view of active textile partners, bespoke tailors, and garment manufacturers in the Mitra Abadi network.</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 border-b border-primary text-primary text-sm font-bold uppercase tracking-wider">
+                            Export PDF
+                        </button>
+<button class="bg-primary-container text-white px-6 py-2 font-bold flex items-center gap-2 active:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">person_add</span>
+                            Add Partner
+                        </button>
+</div>
+</section>
+<!-- Metrics Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest p-6 flex flex-col justify-between h-40 border-l-4 border-primary">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">Total Active</span>
+<div>
+<p class="text-4xl font-light tracking-tighter text-on-surface">1,284</p>
+<p class="text-xs text-green-600 mt-1 font-medium">+12% from last month</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col justify-between h-40">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">Lifetime Value</span>
+<div>
+<p class="text-4xl font-light tracking-tighter text-on-surface">Rp 4.2B</p>
+<p class="text-xs text-zinc-500 mt-1 font-medium">Across all segments</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col justify-between h-40">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">Top Segment</span>
+<div>
+<p class="text-2xl font-bold tracking-tight text-on-surface">Boutique Designers</p>
+<p class="text-xs text-zinc-500 mt-1 font-medium">42% of revenue</p>
+</div>
+</div>
+<div class="bg-surface-container-highest p-6 flex flex-col justify-between h-40 overflow-hidden relative group">
+<div class="z-10">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-800">Retention</span>
+<p class="text-4xl font-light tracking-tighter text-zinc-900">94.2%</p>
+</div>
+<div class="absolute inset-0 opacity-20 transition-transform group-hover:scale-110 duration-700">
+<img class="w-full h-full object-cover" data-alt="macro photograph of intricate red silk fabric weave with deep shadows and highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp_RRplgFZbtVqzKpZgbLSJvVdCNPuYqSRYzgg2cZKisbBM5heEUT9tldZNt9LN0gSJ-eOLD92DrktlPNxUkUFnfMNnHvx4wR00FH0anSwLu8c4O098ZKx7CLHDpcoyqH5DsjZuyBDbcWx8XyhHQC3TjPW5fioCwlKkYcH9EuffjxR2OPZwq8iUbUKjmiWRJuKoMn9R698n9zlgAYUeiRJn8J2Cl_5aEmzOw_AwlXpzpGqJl0kQnlyXaeFnzPs3d9DKGFcIBDNqv6n"/>
+</div>
+</div>
+</section>
+<!-- Filter Shell -->
+<section class="flex gap-4 items-center border-b border-outline-variant/20 pb-4">
+<span class="text-xs font-bold text-zinc-400 uppercase tracking-widest mr-4">Filter By</span>
+<button class="bg-primary text-white px-4 py-1.5 rounded-full text-xs font-medium">All Entities</button>
+<button class="bg-surface-container-high text-on-surface px-4 py-1.5 rounded-full text-xs font-medium hover:bg-surface-container-highest transition-colors">Convections</button>
+<button class="bg-surface-container-high text-on-surface px-4 py-1.5 rounded-full text-xs font-medium hover:bg-surface-container-highest transition-colors">Bespoke Tailors</button>
+<button class="bg-surface-container-high text-on-surface px-4 py-1.5 rounded-full text-xs font-medium hover:bg-surface-container-highest transition-colors">Designers</button>
+</section>
+<!-- Data Table -->
+<section class="bg-surface-container-lowest overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-zinc-100">
+<th class="py-5 px-6 text-[11px] font-bold uppercase tracking-widest text-zinc-400">Partner Entity</th>
+<th class="py-5 px-6 text-[11px] font-bold uppercase tracking-widest text-zinc-400">Category</th>
+<th class="py-5 px-6 text-[11px] font-bold uppercase tracking-widest text-zinc-400">Contact (WA)</th>
+<th class="py-5 px-6 text-[11px] font-bold uppercase tracking-widest text-zinc-400">Order Count</th>
+<th class="py-5 px-6 text-[11px] font-bold uppercase tracking-widest text-zinc-400">Lifetime Value</th>
+<th class="py-5 px-6 text-right"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-zinc-50">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-6 px-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-zinc-100 flex items-center justify-center font-bold text-zinc-400 text-xs">SV</div>
+<div>
+<p class="font-bold text-on-surface leading-tight">Sartorial Vibe Ltd.</p>
+<p class="text-xs text-zinc-400">Jakarta Selatan, ID</p>
+</div>
+</div>
+</td>
+<td class="py-6 px-6">
+<span class="inline-block px-3 py-1 bg-surface-container-high text-on-surface text-[10px] font-bold rounded-full uppercase tracking-wider">Designer</span>
+</td>
+<td class="py-6 px-6">
+<a class="flex items-center gap-2 text-zinc-600 hover:text-green-600 transition-colors text-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+                                        +62 812 3456 7890
+                                    </a>
+</td>
+<td class="py-6 px-6 font-medium text-sm">142 Orders</td>
+<td class="py-6 px-6">
+<p class="font-bold text-sm">Rp 742.000.000</p>
+<div class="w-24 h-1 bg-zinc-100 mt-2">
+<div class="h-full bg-primary w-[80%]"></div>
+</div>
+</td>
+<td class="py-6 px-6 text-right">
+<button class="text-zinc-300 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-6 px-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-zinc-100 flex items-center justify-center font-bold text-zinc-400 text-xs">MA</div>
+<div>
+<p class="font-bold text-on-surface leading-tight">Modiste Abadi</p>
+<p class="text-xs text-zinc-400">Bandung, ID</p>
+</div>
+</div>
+</td>
+<td class="py-6 px-6">
+<span class="inline-block px-3 py-1 bg-surface-container-high text-on-surface text-[10px] font-bold rounded-full uppercase tracking-wider">Convection</span>
+</td>
+<td class="py-6 px-6">
+<a class="flex items-center gap-2 text-zinc-600 hover:text-green-600 transition-colors text-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+                                        +62 811 9999 1234
+                                    </a>
+</td>
+<td class="py-6 px-6 font-medium text-sm">3,410 Orders</td>
+<td class="py-6 px-6">
+<p class="font-bold text-sm">Rp 1.840.000.000</p>
+<div class="w-24 h-1 bg-zinc-100 mt-2">
+<div class="h-full bg-primary w-[95%]"></div>
+</div>
+</td>
+<td class="py-6 px-6 text-right">
+<button class="text-zinc-300 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-6 px-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-zinc-100 flex items-center justify-center font-bold text-zinc-400 text-xs">TK</div>
+<div>
+<p class="font-bold text-on-surface leading-tight">The Kingsmen Tailor</p>
+<p class="text-xs text-zinc-400">Surabaya, ID</p>
+</div>
+</div>
+</td>
+<td class="py-6 px-6">
+<span class="inline-block px-3 py-1 bg-surface-container-high text-on-surface text-[10px] font-bold rounded-full uppercase tracking-wider">Bespoke Tailor</span>
+</td>
+<td class="py-6 px-6">
+<a class="flex items-center gap-2 text-zinc-600 hover:text-green-600 transition-colors text-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+                                        +62 855 2222 4444
+                                    </a>
+</td>
+<td class="py-6 px-6 font-medium text-sm">89 Orders</td>
+<td class="py-6 px-6">
+<p class="font-bold text-sm">Rp 210.500.000</p>
+<div class="w-24 h-1 bg-zinc-100 mt-2">
+<div class="h-full bg-primary w-[30%]"></div>
+</div>
+</td>
+<td class="py-6 px-6 text-right">
+<button class="text-zinc-300 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-6 px-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-zinc-100 flex items-center justify-center font-bold text-zinc-400 text-xs">EL</div>
+<div>
+<p class="font-bold text-on-surface leading-tight">Ethereal Loom</p>
+<p class="text-xs text-zinc-400">Bali, ID</p>
+</div>
+</div>
+</td>
+<td class="py-6 px-6">
+<span class="inline-block px-3 py-1 bg-surface-container-high text-on-surface text-[10px] font-bold rounded-full uppercase tracking-wider">Designer</span>
+</td>
+<td class="py-6 px-6">
+<a class="flex items-center gap-2 text-zinc-600 hover:text-green-600 transition-colors text-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+                                        +62 813 1111 0000
+                                    </a>
+</td>
+<td class="py-6 px-6 font-medium text-sm">256 Orders</td>
+<td class="py-6 px-6">
+<p class="font-bold text-sm">Rp 912.300.000</p>
+<div class="w-24 h-1 bg-zinc-100 mt-2">
+<div class="h-full bg-primary w-[85%]"></div>
+</div>
+</td>
+<td class="py-6 px-6 text-right">
+<button class="text-zinc-300 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<!-- Pagination -->
+<section class="flex justify-between items-center py-6">
+<p class="text-xs font-bold text-zinc-400 uppercase tracking-widest">Showing 1-4 of 1,284 Entities</p>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center border border-zinc-100 text-zinc-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center bg-primary text-white font-bold text-xs">1</button>
+<button class="w-10 h-10 flex items-center justify-center border border-zinc-100 text-zinc-500 hover:text-primary transition-colors text-xs">2</button>
+<button class="w-10 h-10 flex items-center justify-center border border-zinc-100 text-zinc-500 hover:text-primary transition-colors text-xs">3</button>
+<button class="w-10 h-10 flex items-center justify-center border border-zinc-100 text-zinc-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- Floating Action Element -->
+<div class="fixed bottom-8 right-8">
+<button class="w-14 h-14 bg-on-surface text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</body></html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inventaris - Textile Archive Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#410002",
+                        "surface-container-low": "#f3f3f3",
+                        "inverse-primary": "#ffb4ac",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-container": "#fffdff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "surface": "#f9f9f9",
+                        "outline-variant": "#e7bdb8",
+                        "outline": "#926e6b",
+                        "on-tertiary-fixed-variant": "#004b71",
+                        "on-error": "#ffffff",
+                        "primary": "#bd0015",
+                        "background": "#f9f9f9",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-fixed-variant": "#93000d",
+                        "secondary-fixed": "#ffdad6",
+                        "tertiary": "#006291",
+                        "tertiary-fixed": "#cbe6ff",
+                        "on-surface": "#1a1c1c",
+                        "surface-tint": "#c00015",
+                        "on-tertiary-container": "#fefdff",
+                        "surface-container": "#eeeeee",
+                        "on-secondary-fixed-variant": "#8b1918",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#e61e25",
+                        "on-primary-fixed": "#410002",
+                        "surface-bright": "#f9f9f9",
+                        "surface-dim": "#dadada",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "on-surface-variant": "#5d3f3c",
+                        "primary-fixed": "#ffdad6",
+                        "on-tertiary-fixed": "#001e30",
+                        "tertiary-fixed-dim": "#8ecdff",
+                        "secondary-container": "#fd6d63",
+                        "primary-fixed-dim": "#ffb4ac",
+                        "inverse-surface": "#2f3131",
+                        "on-secondary-container": "#6d0007",
+                        "secondary": "#ac322d",
+                        "surface-variant": "#e2e2e2",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#007cb6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope", "sans-serif"],
+                        "display": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen">
+<!-- SideNavBar -->
+<nav class="flex flex-col py-8 px-4 h-full w-64 fixed left-0 top-0 bg-[#F3F3F3] border-r-0 z-50">
+<div class="mb-12 px-4">
+<h1 class="text-xl font-black text-[#1A1C1C] tracking-tight">Archive Portal</h1>
+<p class="text-xs text-on-surface-variant mt-1">The Digital Curator</p>
+</div>
+<button class="mb-8 w-full bg-primary-container text-on-primary-container py-3 px-4 rounded flex items-center justify-center gap-2 hover:bg-primary transition-colors duration-200 cursor-pointer active:scale-98">
+<span class="material-symbols-outlined" data-icon="add" style="font-variation-settings: 'FILL' 0;">add</span>
+<span class="font-manrope text-sm font-bold">New Specimen</span>
+</button>
+<ul class="flex flex-col space-y-2 flex-grow">
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded text-gray-500 hover:bg-gray-200 transition-all font-manrope uppercase text-[10px] tracking-widest font-semibold cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded text-gray-500 hover:bg-gray-200 transition-all font-manrope uppercase text-[10px] tracking-widest font-semibold cursor-pointer active:scale-98" href="#"><span class="material-symbols-outlined text-[20px]" data-icon="edit_note">edit_note</span>
+                    Manual Order Entry</a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded text-[#BD0015] border-r-2 border-[#BD0015] bg-white/50 transition-all font-manrope uppercase text-[10px] tracking-widest font-semibold cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                    Inventory
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded text-gray-500 hover:bg-gray-200 transition-all font-manrope uppercase text-[10px] tracking-widest font-semibold cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_box">add_box</span>
+                    Specimen Entry
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded text-gray-500 hover:bg-gray-200 transition-all font-manrope uppercase text-[10px] tracking-widest font-semibold cursor-pointer active:scale-98" href="#"><span class="material-symbols-outlined text-[20px]" data-icon="history">history</span>
+                    Riwayat Transaksi</a>
+</li>
+</ul>
+<div class="mt-auto pt-8 border-t border-outline-variant/15">
+<ul class="flex flex-col space-y-2">
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded text-gray-500 hover:bg-gray-200 transition-all font-manrope uppercase text-[10px] tracking-widest font-semibold cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+                        Help
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-3 rounded text-gray-500 hover:bg-gray-200 transition-all font-manrope uppercase text-[10px] tracking-widest font-semibold cursor-pointer active:scale-98" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+                        Logout
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 left-64 z-40 flex justify-between items-center px-8 w-full h-16 bg-[#F9F9F9]">
+<div class="flex items-center gap-4">
+<span class="text-lg font-bold tracking-tight text-[#1A1C1C]">Textile Archive Management</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden md:block">
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-b border-outline-variant focus:border-primary focus:outline-none transition-colors w-64 text-sm bg-transparent rounded-none" placeholder="Search archive..." type="text"/>
+<span class="material-symbols-outlined absolute left-2 top-2.5 text-on-surface-variant text-lg" data-icon="search">search</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#1A1C1C] hover:text-[#E61E25] transition-colors duration-200 scale-95 active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-[#1A1C1C] hover:text-[#E61E25] transition-colors duration-200 scale-95 active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="account_circle" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 mt-16 p-8 max-w-7xl">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-4xl font-display font-extrabold tracking-tight text-on-surface mb-2">Inventaris</h2>
+<p class="text-on-surface-variant font-body text-lg leading-relaxed">Kelola spesimen kain, pantau stok, dan perbarui metadata.</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 bg-surface-container-lowest text-on-surface text-sm font-bold tracking-wide rounded hover:bg-surface-container-high transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+                    Filter
+                </button>
+<button class="px-6 py-2 bg-primary-container text-on-primary-container text-sm font-bold tracking-wide rounded hover:bg-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                    Ekspor
+                </button>
+</div>
+</div>
+<!-- Inventory Table (Bento Grid Style) -->
+<div class="bg-surface-container-lowest rounded-xl p-8 mb-8">
+<!-- Table Header -->
+<div class="grid grid-cols-12 gap-4 pb-4 border-b border-outline-variant/20 mb-6 text-xs font-label font-bold tracking-widest uppercase text-on-surface-variant">
+<div class="col-span-3">Nama Spesimen</div>
+<div class="col-span-2">Kategori</div>
+<div class="col-span-2 text-right">Stok (Yard)</div>
+<div class="col-span-1 text-right">GSM</div>
+<div class="col-span-2 text-right">Lebar (cm)</div>
+<div class="col-span-2 text-right">Status</div>
+</div>
+<!-- Table Rows -->
+<div class="flex flex-col gap-6">
+<!-- Row 1 -->
+<div class="grid grid-cols-12 gap-4 items-center group cursor-pointer">
+<div class="col-span-3 flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest rounded-full overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up shot of fine silk fabric with an intricate jacquard weave pattern. The fabric is a deep, rich indigo blue with subtle silver threads woven throughout. The lighting is soft and directional, highlighting the texture and sheen of the silk. The aesthetic is luxurious, high-end, and editorial, suitable for a premium archive platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABQ8CNRpYFjxVgQ_bVY2yMDC3d64zWZhThgWNSTsOHjIbxelGQ_Dk0kdTBUKEM1la2eBkm2OUTzLFZ4SKr83chhNFYYVcqsYT72XsILF_zZ50qZNz9pmvutALWI71EoWJe8HoY2QNEgvxcA2ZhfcTB0C2Y-83HiwarCJtNk3tJseWelZw7HStk7BBpnj0IGoMUf3WjEMPc_LrAkYXXDdUQlCM4SdGiz6gC3OGjgc0hIXCBiuwSQdG-LqLT4Xao6TwLu5MdkNOhlB0z"/>
+</div>
+<div>
+<div class="font-headline font-bold text-on-surface text-sm group-hover:text-primary transition-colors">Indigo Jacquard Silk</div>
+<div class="font-body text-xs text-on-surface-variant mt-1">ID: ARC-0921</div>
+</div>
+</div>
+<div class="col-span-2">
+<span class="inline-block px-3 py-1 bg-surface-container-high text-on-surface text-[10px] font-label font-bold tracking-widest uppercase rounded-full">Silk</span>
+</div>
+<div class="col-span-2 text-right font-body text-sm font-medium text-on-surface">Stok (Yard)</div>
+<div class="col-span-1 text-right font-body text-sm text-on-surface-variant">85</div>
+<div class="col-span-2 text-right font-body text-sm text-on-surface-variant">114</div>
+<div class="col-span-2 flex justify-end">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-low text-on-surface text-[10px] font-label font-bold tracking-widest uppercase rounded-full">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Tersedia
+                        </span>
+</div>
+</div>
+<!-- Row 2 (Low Stock Alert) -->
+<div class="grid grid-cols-12 gap-4 items-center group cursor-pointer bg-error-container/20 -mx-4 px-4 py-2 rounded-lg">
+<div class="col-span-3 flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest rounded-full overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Macro photography of raw organic cotton fabric. The texture is slightly rough and unbleached, showing natural variations in color from off-white to pale beige. Small flecks of natural plant matter are visible in the weave. The lighting is bright and natural, emphasizing the organic and sustainable quality of the material. Minimalist and clean visual style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_dSKQFtJpVTGehblYZDV1uFrg14s9yCckw186yqOm_Vnde6Z7ZG2JFKN97eZSQc_wv1FvLnNKwozWw2_6qk_WaP44zysYWpcygG4vk40F3MnxkmOHbyxn0jKe46sV898xhtGBrmUxdFLnk_gPotPtVvfzLxaoW7mrfqUck0BnAgyjIPWG34vfcImIS6flqm6X9rSzOG7CqSHhDEadHLg65PAd-xeHP9nWtptBCp9ubkcAmoAHBTWnG4WUAACqi5j-2qtc1vNkxc8V"/>
+</div>
+<div>
+<div class="font-headline font-bold text-error text-sm">Raw Organic Cotton</div>
+<div class="font-body text-xs text-on-surface-variant mt-1">ID: ARC-1044</div>
+</div>
+</div>
+<div class="col-span-2">
+<span class="inline-block px-3 py-1 bg-surface-container-high text-on-surface text-[10px] font-label font-bold tracking-widest uppercase rounded-full">Cotton</span>
+</div>
+<div class="col-span-2 text-right font-body text-sm font-bold text-error">Stok (Yard)</div>
+<div class="col-span-1 text-right font-body text-sm text-on-surface-variant">180</div>
+<div class="col-span-2 text-right font-body text-sm text-on-surface-variant">150</div>
+<div class="col-span-2 flex justify-end">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-error-container text-error text-[10px] font-label font-bold tracking-widest uppercase rounded-full">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span> Stok Menipis
+                        </span>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="grid grid-cols-12 gap-4 items-center group cursor-pointer">
+<div class="col-span-3 flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest rounded-full overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A detailed view of a heavy linen fabric in an earthy olive green tone. The coarse weave and nubby texture characteristic of natural linen are clearly visible. The fabric is draped slightly, creating soft folds and shadows that add depth to the image. Warm, diffused lighting enhances the natural feel. Professional, high-contrast editorial photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAikeJrs01ROb9xnFCkTvFcV2LGMq8pRUMVWYcV1Et0hFsxf8QH42HF-lKR1Cc_6KJPZNTnXg9E7frYFlWEBTU6Tryub4g1p0VW0cVlqeA2e5gXQExcmqdvuHveTKJJz8aowlk58xBEzlnZmxvQ10CsC6SHtMs922H1nuePMgAWLRNNMZb8v9UJOvRUZNExETe3Z3VpKqE8oCXW5osjO5vuZZarTrQMENl-WElInvOnDt2csaKtLftusswpBW_ZEj1GTi3KGJXB5UXT"/>
+</div>
+<div>
+<div class="font-headline font-bold text-on-surface text-sm group-hover:text-primary transition-colors">Heavyweight Linen</div>
+<div class="font-body text-xs text-on-surface-variant mt-1">ID: ARC-0872</div>
+</div>
+</div>
+<div class="col-span-2">
+<span class="inline-block px-3 py-1 bg-surface-container-high text-on-surface text-[10px] font-label font-bold tracking-widest uppercase rounded-full">Linen</span>
+</div>
+<div class="col-span-2 text-right font-body text-sm font-medium text-on-surface">Stok (Yard)</div>
+<div class="col-span-1 text-right font-body text-sm text-on-surface-variant">250</div>
+<div class="col-span-2 text-right font-body text-sm text-on-surface-variant">140</div>
+<div class="col-span-2 flex justify-end">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-low text-on-surface text-[10px] font-label font-bold tracking-widest uppercase rounded-full">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Tersedia
+                        </span>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-8 pt-6 flex justify-between items-center border-t border-outline-variant/15">
+<div class="text-xs font-body text-on-surface-variant">Menampilkan 1-3 dari 124 spesimen</div>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface transition-colors cursor-not-allowed opacity-50">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-surface-container-high text-on-surface font-label text-xs font-bold transition-colors">1</button>
+<button class="w-8 h-8 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface font-label text-xs font-bold transition-colors">2</button>
+<button class="w-8 h-8 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface font-label text-xs font-bold transition-colors">3</button>
+<button class="w-8 h-8 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

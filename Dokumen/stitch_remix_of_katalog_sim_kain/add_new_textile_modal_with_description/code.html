@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#926e6b",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container": "#eeeeee",
+                    "inverse-primary": "#ffb4ac",
+                    "on-primary-container": "#fffdff",
+                    "tertiary-fixed-dim": "#8ecdff",
+                    "background": "#f9f9f9",
+                    "primary-fixed-dim": "#ffb4ac",
+                    "surface-container-low": "#f3f3f3",
+                    "on-surface": "#1a1c1c",
+                    "secondary-fixed": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#f9f9f9",
+                    "inverse-on-surface": "#f1f1f1",
+                    "tertiary-fixed": "#cbe6ff",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#ffb4ac",
+                    "surface-container-high": "#e8e8e8",
+                    "secondary": "#ac322d",
+                    "primary": "#bd0015",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#6d0007",
+                    "tertiary-container": "#007cb6",
+                    "on-tertiary-fixed": "#001e30",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#5d3f3c",
+                    "on-tertiary-fixed-variant": "#004b71",
+                    "on-primary-fixed-variant": "#93000d",
+                    "inverse-surface": "#2f3131",
+                    "surface-tint": "#c00015",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#8b1918",
+                    "on-primary-fixed": "#410002",
+                    "on-background": "#1a1c1c",
+                    "surface-variant": "#e2e2e2",
+                    "primary-fixed": "#ffdad6",
+                    "on-secondary-fixed": "#410002",
+                    "outline-variant": "#e7bdb8",
+                    "secondary-container": "#fd6d63",
+                    "tertiary": "#006291",
+                    "on-tertiary-container": "#fefdff",
+                    "surface-dim": "#dadada",
+                    "primary-container": "#e61e25",
+                    "surface": "#f9f9f9",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .line-input {
+            border: none;
+            border-bottom: 1px solid #e7bdb8;
+            background: transparent;
+            border-radius: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .line-input:focus {
+            box-shadow: none;
+            border-bottom: 1px solid #bd0015;
+            outline: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-hidden">
+<!-- Background Screen: Inventory & Stock Management -->
+<div class="fixed inset-0 flex flex-col blur-md scale-[0.99] pointer-events-none opacity-40">
+<!-- TopAppBar Placeholder -->
+<header class="bg-[#F9F9F9] flex justify-between items-center px-8 h-20 w-full font-['Manrope'] tracking-tight">
+<div class="text-2xl font-bold text-[#1A1C1C]">Textile Archive</div>
+<div class="flex gap-8 items-center">
+<span class="text-[#E61E25] border-b-2 border-[#E61E25] pb-1">Inventory</span>
+<span class="opacity-70">Analysis</span>
+<span class="opacity-70">Curators</span>
+<span class="opacity-70">Settings</span>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined">notifications</span>
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- SideNavBar Placeholder -->
+<aside class="h-full w-64 border-r border-[#F3F3F3] py-8 flex flex-col gap-6 px-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest"></div>
+<div>
+<p class="text-sm font-bold">Archive Manager</p>
+<p class="text-xs opacity-60">Senior Curator</p>
+</div>
+</div>
+<div class="flex items-center gap-3 text-[#E61E25] font-bold"><span class="material-symbols-outlined">dashboard</span> Dashboard</div>
+<div class="flex items-center gap-3 opacity-60"><span class="material-symbols-outlined">folder_open</span> Library</div>
+<div class="flex items-center gap-3 opacity-60"><span class="material-symbols-outlined">biotech</span> Fiber Lab</div>
+<div class="flex items-center gap-3 opacity-60"><span class="material-symbols-outlined">account_balance</span> Exhibitions</div>
+</aside>
+<!-- Grid Content Placeholder -->
+<main class="flex-1 p-12 overflow-y-auto">
+<div class="grid grid-cols-3 gap-8">
+<div class="aspect-[3/4] bg-surface-container-low rounded-lg"></div>
+<div class="aspect-[3/4] bg-surface-container-low rounded-lg"></div>
+<div class="aspect-[3/4] bg-surface-container-low rounded-lg"></div>
+</div>
+</main>
+</div>
+</div>
+<!-- Modal Backdrop -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-sm flex items-center justify-center z-50 p-6">
+<!-- Modal Container -->
+<div class="bg-surface-container-lowest w-full max-w-4xl max-h-[921px] overflow-hidden flex flex-col relative shadow-[0_40px_100px_-15px_rgba(26,28,28,0.1)] rounded-lg">
+<!-- Modal Header -->
+<div class="px-10 pt-10 pb-6 flex justify-between items-start">
+<div>
+<h2 class="text-3xl font-bold tracking-tight text-on-surface">New Entry</h2>
+<p class="text-on-surface/60 mt-1 uppercase tracking-widest text-[10px] font-semibold">Archival Specimen Registration</p>
+</div>
+<button class="w-10 h-10 flex items-center justify-center hover:bg-surface-container-low transition-colors duration-200">
+<span class="material-symbols-outlined text-on-surface/40">close</span>
+</button>
+</div>
+<!-- Scrollable Form Area -->
+<div class="flex-1 overflow-y-auto px-10 pb-10 custom-scrollbar">
+<form class="grid grid-cols-12 gap-x-12 gap-y-12">
+<!-- Section 1: Basic Information -->
+<div class="col-span-12 lg:col-span-6 space-y-8">
+<div class="flex items-center gap-3 border-l-2 border-primary pl-4 mb-4">
+<span class="text-xs font-bold tracking-[0.2em] uppercase text-primary">Basic Information</span>
+</div>
+<div class="space-y-6">
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold uppercase tracking-wider text-on-surface/50">Textile Name</label>
+<input class="line-input w-full py-2 text-lg" placeholder="e.g. Italian Wool Cavalry Twill" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold uppercase tracking-wider text-on-surface/50">SKU Reference</label>
+<input class="line-input w-full py-2" placeholder="ARC-2024-001" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold uppercase tracking-wider text-on-surface/50">Category</label>
+<select class="line-input w-full py-2 cursor-pointer bg-transparent">
+<option>Suiting</option>
+<option>Jacquard</option>
+<option>Silk</option>
+<option>Heavy Canvas</option>
+</select>
+</div>
+</div><div class="flex flex-col gap-1 mt-6">
+<label class="text-[10px] font-bold uppercase tracking-wider text-on-surface/50">Description / Notes</label>
+<textarea class="line-input w-full py-2 text-sm min-h-[100px] resize-none" placeholder="Add archival notes, weave details, or fiber composition specifics..."></textarea>
+</div>
+</div>
+</div>
+<!-- Section 2: Technical Specifications -->
+<div class="col-span-12 lg:col-span-6 space-y-8">
+<div class="flex items-center gap-3 border-l-2 border-primary pl-4 mb-4">
+<span class="text-xs font-bold tracking-[0.2em] uppercase text-primary">Technical Specifications</span>
+</div>
+<div class="space-y-6">
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold uppercase tracking-wider text-on-surface/50">Price per meter (USD)</label>
+<input class="line-input w-full py-2" placeholder="0.00" type="number"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold uppercase tracking-wider text-on-surface/50">Fabric Width (cm)</label>
+<input class="line-input w-full py-2" placeholder="150" type="number"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold uppercase tracking-wider text-on-surface/50">Gramasi (GSM)</label>
+<input class="line-input w-full py-2" placeholder="280" type="number"/>
+</div>
+</div>
+</div>
+<!-- Section 3: Asset Upload -->
+<div class="col-span-12 space-y-6">
+<div class="flex items-center gap-3 border-l-2 border-primary pl-4">
+<span class="text-xs font-bold tracking-[0.2em] uppercase text-primary">Asset Upload</span>
+</div>
+<div class="group relative w-full h-48 bg-surface-container-low border-2 border-dashed border-outline-variant/30 flex flex-col items-center justify-center transition-all duration-300 hover:border-primary/40 hover:bg-surface-container">
+<input class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" type="file"/>
+<div class="flex flex-col items-center text-center pointer-events-none">
+<span class="material-symbols-outlined text-4xl text-on-surface/20 mb-3 group-hover:text-primary/60 transition-colors">cloud_upload</span>
+<p class="text-sm font-medium text-on-surface/60">Drag and drop fabric macro samples</p>
+<p class="text-[10px] uppercase tracking-widest text-on-surface/40 mt-1">High-resolution JPG or PNG up to 20MB</p>
+</div>
+</div>
+<div class="flex gap-4 overflow-x-auto py-2">
+<div class="w-20 h-20 bg-surface-container-highest flex items-center justify-center relative flex-shrink-0 group">
+<img class="w-full h-full object-cover" data-alt="macro close-up of heavy grey wool textile texture with diagonal twill weave pattern under soft gallery lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu8faUztBgxo7QRgh7QGmAkXmJKF9OqJlBUGUNclD0FQoPSlJcvWzWbN1y7FCw5CfZ6SV67TbS5cYn4XYKcw1Sx3E89xJnzzHxit5imw0dUxz_dcaFWlGEqQlVdD8-t3CBdvbRz3lHlk8KDpccqcZoLIHNucGgbm_82Yvubf_t33gsdNYzFVd4yD-Wuv4a2KLSOkZnIwW18tkFQpA9EsjIeQmnCu0melabwMo-w3-gtHNPShov6JtRj9ncOQ9iD6IIFnnxrxmFc3-D"/>
+<button class="absolute -top-1 -right-1 bg-primary text-white w-5 h-5 rounded-full text-[10px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">×</button>
+</div>
+<div class="w-20 h-20 bg-surface-container-highest border border-outline-variant/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-surface/20">add</span>
+</div>
+</div>
+</div>
+<!-- Section 4: Inventory Initialization -->
+<div class="col-span-12 space-y-6">
+<div class="flex items-center gap-3 border-l-2 border-primary pl-4">
+<span class="text-xs font-bold tracking-[0.2em] uppercase text-primary">Inventory Initialization</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 bg-surface-container-low p-8">
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold uppercase tracking-wider text-on-surface/50">Number of Rolls</label>
+<input class="line-input w-full py-2" placeholder="1" type="number"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold uppercase tracking-wider text-on-surface/50">Total Meterage</label>
+<input class="line-input w-full py-2" placeholder="50.0" type="number"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold uppercase tracking-wider text-on-surface/50">Storage Location</label>
+<input class="line-input w-full py-2" placeholder="Section B / Row 4" type="text"/>
+</div>
+</div>
+</div>
+</form>
+</div>
+<!-- Modal Footer -->
+<div class="px-10 py-8 bg-surface-container-low/50 flex justify-end items-center gap-6">
+<button class="text-xs font-bold uppercase tracking-widest text-on-surface/60 hover:text-on-surface transition-colors">Discard Draft</button>
+<button class="bg-primary text-white px-10 py-4 font-bold text-xs uppercase tracking-[0.2em] shadow-lg shadow-primary/20 active:scale-95 transition-all">
+                    Register Specimen
+                </button>
+</div>
+</div>
+</div>
+</body></html>

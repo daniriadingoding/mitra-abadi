@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#acc7ff",
+                    "surface-container": "#edeeef",
+                    "on-primary-fixed": "#001a40",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#004491",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-secondary-container": "#636262",
+                    "surface-variant": "#e1e3e4",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-primary-container": "#bbd0ff",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-tertiary-fixed": "#380d00",
+                    "secondary-container": "#e2dfde",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "tertiary-fixed": "#ffdbcf",
+                    "on-error": "#ffffff",
+                    "tertiary": "#772600",
+                    "surface-container-high": "#e7e8e9",
+                    "on-surface": "#191c1d",
+                    "surface-tint": "#115cb9",
+                    "primary-container": "#0056b3",
+                    "on-tertiary-container": "#ffc2ac",
+                    "surface-dim": "#d9dadb",
+                    "inverse-surface": "#2e3132",
+                    "on-tertiary-fixed-variant": "#802a00",
+                    "surface-bright": "#f8f9fa",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#424752",
+                    "primary": "#003f87",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f3f4f5",
+                    "outline": "#727784",
+                    "tertiary-container": "#9f3500",
+                    "surface": "#f8f9fa",
+                    "primary-fixed": "#d7e2ff",
+                    "secondary": "#5f5e5e",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#474746",
+                    "outline-variant": "#c2c6d4",
+                    "on-background": "#191c1d",
+                    "primary-fixed-dim": "#acc7ff",
+                    "background": "#f8f9fa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .glass-header {
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- SideNavBar Anchor -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-slate-50 dark:bg-slate-900 flex flex-col py-6 z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<img alt="Mitra Abadi Logo" class="h-8 w-8 object-contain" data-alt="Corporate minimalist logo featuring a geometric textile pattern in professional red and deep navy colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC95vcMAyPWVtcOJ7dDTAhDqTNw-ZusMbHxwVhEgSEKiyzm5hCpPZnVWN7acLSZsdf1RwmG7idk32l1HQIV5JWr-AVtFlQBkQLyAIr7UDWyaqx5GV0TIYnAN9TgXdxddQTIlaa-8_HMLIz7efbi2FqROmojvCKuBpxoN9RtKZQEYvAUDIivg0i4d6NHocP5VAZjGBTA7DLH_sU5vND88bbGYaBaWdyaE1ledq1VsHf2Rwd2lQyvbM6m94mWmJ3Po7u7E_tUPgOpOwFT"/>
+<div class="flex flex-col">
+<span class="text-xl font-black text-blue-900 dark:text-blue-100 leading-tight">Mitra Abadi</span>
+<span class="text-[10px] font-inter tracking-widest uppercase text-secondary">Textile Archivist</span>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-6 py-3 text-slate-600 hover:text-blue-600 hover:bg-slate-100 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+<span class="font-manrope tracking-tight font-bold">Dashboard</span>
+</a>
+<a class="flex items-center px-6 py-3 text-blue-700 dark:text-blue-400 font-bold border-r-4 border-blue-700 dark:border-blue-400 bg-white dark:bg-slate-950" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="inventory_2">inventory_2</span>
+<span class="font-manrope tracking-tight font-bold">Inventory</span>
+</a>
+<a class="flex items-center px-6 py-3 text-slate-600 hover:text-blue-600 hover:bg-slate-100 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-manrope tracking-tight font-bold">Orders</span>
+</a>
+<a class="flex items-center px-6 py-3 text-slate-600 hover:text-blue-600 hover:bg-slate-100 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="group">group</span>
+<span class="font-manrope tracking-tight font-bold">Customers</span>
+</a>
+<a class="flex items-center px-6 py-3 text-slate-600 hover:text-blue-600 hover:bg-slate-100 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="assessment">assessment</span>
+<span class="font-manrope tracking-tight font-bold">Reports</span>
+</a>
+</nav>
+<div class="px-6 mt-auto pt-6 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-primary-container flex items-center justify-center text-white font-bold">JD</div>
+<div class="overflow-hidden">
+<p class="text-sm font-bold truncate">John Doe</p>
+<p class="text-[10px] uppercase tracking-tighter text-secondary">Administrator</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Anchor -->
+<header class="fixed top-0 right-0 left-64 h-16 glass-header z-40 flex items-center justify-between px-8 border-b border-transparent">
+<div class="flex items-center flex-1 max-w-xl bg-surface-container-low rounded-xl px-4 py-2 opacity-80 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-outline mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full font-body" placeholder="Search archive by SKU or material name..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-slate-500 hover:text-blue-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-tertiary rounded-full"></span>
+</button>
+<button class="text-slate-500 hover:text-blue-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-24 px-8 pb-12 min-h-screen">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+<div>
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2">Fabric Archive</h1>
+<p class="text-secondary font-body text-sm max-w-md">Curated inventory management for premium textiles and legacy archival fabrics.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-highest text-on-surface font-manrope font-bold text-sm rounded-xl hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="inventory">inventory</span>
+                    Stock Opname
+                </button>
+<button class="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-white font-manrope font-bold text-sm rounded-xl hover:opacity-90 transition-all shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                    Add New Fabric
+                </button>
+</div>
+</div>
+<!-- KPI Stats Bar -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+<div class="bg-surface-container-lowest p-6 rounded-xl transition-all hover:translate-y-[-2px]">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-primary-fixed text-primary rounded-lg material-symbols-outlined" data-icon="layers">layers</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-secondary">+2.4%</span>
+</div>
+<p class="text-secondary font-label text-[10px] uppercase tracking-widest mb-1">Total Inventory</p>
+<h3 class="text-2xl font-black text-on-surface tracking-tight">12,482 <span class="text-sm font-normal text-secondary">Rolls</span></h3>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl transition-all hover:translate-y-[-2px]">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-secondary-fixed text-secondary rounded-lg material-symbols-outlined" data-icon="straighten">straighten</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-secondary">+120m</span>
+</div>
+<p class="text-secondary font-label text-[10px] uppercase tracking-widest mb-1">Total Meterage</p>
+<h3 class="text-2xl font-black text-on-surface tracking-tight">342,010 <span class="text-sm font-normal text-secondary">Meters</span></h3>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-tertiary transition-all hover:translate-y-[-2px]">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-tertiary-fixed text-tertiary rounded-lg material-symbols-outlined" data-icon="warning">warning</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-tertiary">Urgent</span>
+</div>
+<p class="text-secondary font-label text-[10px] uppercase tracking-widest mb-1">Low Stock Alerts</p>
+<h3 class="text-2xl font-black text-on-surface tracking-tight">18 <span class="text-sm font-normal text-secondary">SKUs</span></h3>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl transition-all hover:translate-y-[-2px]">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-primary-fixed text-primary rounded-lg material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-secondary">Valued</span>
+</div>
+<p class="text-secondary font-label text-[10px] uppercase tracking-widest mb-1">Archive Valuation</p>
+<h3 class="text-2xl font-black text-on-surface tracking-tight">$1.2M <span class="text-sm font-normal text-secondary">USD</span></h3>
+</div>
+</div>
+<!-- Filtering & Inventory Table Section -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/15">
+<div class="p-6 border-b border-outline-variant/10 flex items-center justify-between bg-white">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container rounded-lg cursor-pointer hover:bg-surface-variant transition-colors">
+<span class="text-[11px] font-bold uppercase tracking-tight text-secondary">Material: All</span>
+<span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container rounded-lg cursor-pointer hover:bg-surface-variant transition-colors">
+<span class="text-[11px] font-bold uppercase tracking-tight text-secondary">Status: All</span>
+<span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="text-[10px] text-secondary font-inter tracking-widest uppercase">
+                    Showing 1-12 of 1,240 fabrics
+                </div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-secondary">Fabric Swatch</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-secondary">Product Details</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-secondary">Inventory Level</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-secondary">Stock Status</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-secondary text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<img alt="Mulberry Silk Swatch" class="w-16 h-16 rounded-sm object-cover shadow-sm ring-1 ring-black/5" data-alt="High-detail macro shot of shimmering mulberry silk fabric with elegant folds and soft luster in deep royal blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpZlHPq6nkUt3izL273b4cktkSXjTSTGrM8_4NK_lxHyJJUmI5UYV3dg9_p9nAftvY0sLAHqtLeLuXgmRJQouB5Oncwma2liqYMZNRFMr7iFan8GwzGR1TiaZZAQvR9gq9dYake1tAyfrmiW3nmvgoD5t5haO-FtxXJnuNREPXCIAbmw6ee8MYQwA_icMoDxyEtD5r2BWIibQVcy2VIzR5y-gBRxFQvYjeDTA1eW3zY-hE-y7ea6Fs3f2Tb0VHhRi07b5tSJpkGTq8"/>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface mb-0.5">Imperial Mulberry Silk</span>
+<span class="text-[10px] font-mono tracking-tighter text-secondary uppercase">SKU: SILK-MUL-802</span>
+<span class="inline-flex mt-1 text-[9px] font-bold text-primary uppercase tracking-tight bg-primary-fixed px-1.5 py-0.5 rounded w-fit">Silk</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface">142 Rolls</span>
+<span class="text-xs text-secondary">~ 7,100 Meters</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary-container text-white text-[10px] font-bold uppercase tracking-tight">
+                                    Stable
+                                </span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container rounded-lg text-secondary hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-lg text-secondary hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="history">history</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<img alt="Twill Cotton Swatch" class="w-16 h-16 rounded-sm object-cover shadow-sm ring-1 ring-black/5" data-alt="Close-up of premium heavy-weight cotton twill fabric with visible diagonal weave texture in a muted charcoal grey color" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwvYNq-kva5QSZvh4ZR8FMX3V2PVmd-07dGtNkatR70mPBeZetU-6UBs_pw4qtDNfzpsekA_C8ahOhC4NTf916rW6t6gvakkfHP3IV5EFyJI3WTiixSuCDr93G7A8_viHxzfnKfMeOzq8TfG1g74mv9Gfoj73zmfA0GzBJXZnebbCnA3RkuSg5IzxYE7xNz778_wD1DdUujwkL-L2NjDO0LlqnzAPqkyV_OO1nwhIyxBvLjOZb-FaYdPYtZR-qdt2Cv5k1UL3JHG3K"/>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface mb-0.5">Heavyweight Charcoal Twill</span>
+<span class="text-[10px] font-mono tracking-tighter text-secondary uppercase">SKU: COT-TWL-911</span>
+<span class="inline-flex mt-1 text-[9px] font-bold text-secondary uppercase tracking-tight bg-secondary-container px-1.5 py-0.5 rounded w-fit">Cotton</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-error">12 Rolls</span>
+<span class="text-xs text-error font-medium">~ 600 Meters</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-tertiary text-white text-[10px] font-bold uppercase tracking-tight animate-pulse">
+                                    Critical
+                                </span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container rounded-lg text-secondary hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-lg text-secondary hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<img alt="Linen Blend Swatch" class="w-16 h-16 rounded-sm object-cover shadow-sm ring-1 ring-black/5" data-alt="Lightweight breathable linen blend fabric in natural oatmeal beige showing organic fiber imperfections and airy weave" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD270G5_80T7EEQrcPhjRV7T9SHS-XMa8mRntofP0EA5oqdf2fmbzY9zMxD7m8YqavpOv2A16XxP0GIzCkXHS6mM5mauv0xG6EFVkCtcgmmm03lVWtuxpGHJan6S3doWIC837yJ3NijNQBLyw5hyM38FEHjqu0zmdoJR2PYYY77XAvZUaF3SJyi2XjvHb6zArObFyvlY_4K_Knc86TNRQr69zJrZE6IbsOmH4bj3pnxSfbQrgRsLmYCE6ZXt3NK3ALD6Cz8lY9GopFL"/>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface mb-0.5">Sandstone Linen Blend</span>
+<span class="text-[10px] font-mono tracking-tighter text-secondary uppercase">SKU: LIN-SND-442</span>
+<span class="inline-flex mt-1 text-[9px] font-bold text-on-tertiary-container uppercase tracking-tight bg-tertiary-container/20 px-1.5 py-0.5 rounded w-fit">Linen</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface">45 Rolls</span>
+<span class="text-xs text-secondary">~ 2,250 Meters</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-tertiary-container text-white text-[10px] font-bold uppercase tracking-tight">
+                                    Low Stock
+                                </span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container rounded-lg text-secondary hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-lg text-secondary hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="history">history</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5">
+<img alt="Velvet Swatch" class="w-16 h-16 rounded-sm object-cover shadow-sm ring-1 ring-black/5" data-alt="Plush deep emerald green velvet with soft pile and rich shadows showing luxurious texture and dramatic light play" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-W4Jj37-YeDI1FkPahzTt8U8JyrT-LEgZKi_KV8-Cy-KxnIbSioXe-LWf_8gdxzjLINC7eWd8TOUUkW1muBlQFO3DmDlyn0K5POrZj9w6iByaId-Eu7M6pboBlmvEBsdqVKQ9H3kpOq1KweHBBiq_M3actC8DsnVuW7IWuoNaVz4uhs2bv2GloDBclie9OtAgK3KQyJut2a85dub4NQh4HQ339vCwqqWh7XnrRm2ZXXuRVYii7VKAuBqxRyBOtOg_J-xnBu5AGWgl"/>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface mb-0.5">Midnight Emerald Velvet</span>
+<span class="text-[10px] font-mono tracking-tighter text-secondary uppercase">SKU: VEL-EMR-109</span>
+<span class="inline-flex mt-1 text-[9px] font-bold text-on-primary-fixed-variant uppercase tracking-tight bg-primary-fixed-dim px-1.5 py-0.5 rounded w-fit">Premium</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface">88 Rolls</span>
+<span class="text-xs text-secondary">~ 4,400 Meters</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-slate-400 text-white text-[10px] font-bold uppercase tracking-tight">
+                                    In Transit
+                                </span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-surface-container rounded-lg text-secondary hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-lg text-secondary hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="local_shipping">local_shipping</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 border-t border-outline-variant/10 flex items-center justify-center">
+<div class="flex items-center gap-2">
+<button class="p-2 bg-surface-container text-secondary rounded-lg hover:bg-surface-variant">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="px-4 py-2 bg-primary text-white rounded-lg font-bold text-xs">1</button>
+<button class="px-4 py-2 hover:bg-surface-container text-secondary rounded-lg font-bold text-xs transition-colors">2</button>
+<button class="px-4 py-2 hover:bg-surface-container text-secondary rounded-lg font-bold text-xs transition-colors">3</button>
+<button class="px-4 py-2 hover:bg-surface-container text-secondary rounded-lg font-bold text-xs transition-colors">...</button>
+<button class="px-4 py-2 hover:bg-surface-container text-secondary rounded-lg font-bold text-xs transition-colors">24</button>
+<button class="p-2 bg-surface-container text-secondary rounded-lg hover:bg-surface-variant">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Secondary Task Grid -->
+<div class="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
+<h4 class="text-xl font-bold mb-4 tracking-tight">Recent Stock Movement</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-white rounded-lg border-l-4 border-primary">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined p-2 bg-primary-fixed text-primary rounded-lg" data-icon="add_box">add_box</span>
+<div>
+<p class="text-sm font-bold">+12 Rolls Imperial Mulberry Silk</p>
+<p class="text-[10px] text-secondary uppercase font-inter tracking-tighter">Receiving • Warehouse A-12 • 2h ago</p>
+</div>
+</div>
+<span class="text-xs font-bold text-primary">+$4,200</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-white rounded-lg border-l-4 border-tertiary">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined p-2 bg-tertiary-fixed text-tertiary rounded-lg" data-icon="outbox">outbox</span>
+<div>
+<p class="text-sm font-bold">-04 Rolls Sandstone Linen Blend</p>
+<p class="text-[10px] text-secondary uppercase font-inter tracking-tighter">Dispatch • Order #MN-209 • 5h ago</p>
+</div>
+</div>
+<span class="text-xs font-bold text-tertiary">-$1,120</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-white rounded-lg border-l-4 border-slate-300">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined p-2 bg-slate-100 text-slate-500 rounded-lg" data-icon="swap_horiz">swap_horiz</span>
+<div>
+<p class="text-sm font-bold">Stock Adjustment • Charcoal Twill</p>
+<p class="text-[10px] text-secondary uppercase font-inter tracking-tighter">Inventory Audit • QA Manager • 1d ago</p>
+</div>
+</div>
+<span class="text-xs font-bold text-slate-500">Corrected</span>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-tertiary to-tertiary-container p-8 rounded-xl text-white flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-4xl mb-4" data-icon="priority_high" data-weight="fill">priority_high</span>
+<h4 class="text-2xl font-black mb-2 leading-tight">Critical Reorder Necessary</h4>
+<p class="text-white/80 text-sm font-body mb-6">4 Cotton categories and 2 Linen blends are currently below minimum safety stock levels.</p>
+</div>
+<button class="w-full py-4 bg-white text-tertiary font-bold rounded-xl hover:bg-tertiary-fixed transition-colors text-sm uppercase tracking-widest">
+                    Generate Purchase Orders
+                </button>
+</div>
+</div>
+</main>
+</body></html>
