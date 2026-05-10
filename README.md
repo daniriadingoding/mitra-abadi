@@ -6,6 +6,7 @@ Mitra Abadi adalah platform manajemen arsip digital dan inventaris tekstil yang 
 
 - **Backend**: Laravel 12 (PHP 8.2+)
 - **Frontend**: React.js dengan Inertia.js
+- **Authentikasi**: Laravel Breeze (Inertia Stack)
 - **Styling**: Tailwind CSS v4
 - **Database**: MySQL / MariaDB
 - **Icons**: Material Symbols Outlined (Google Fonts)
