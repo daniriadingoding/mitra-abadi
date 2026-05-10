@@ -37,8 +37,7 @@ class CatalogController extends Controller
                 $query->where('gsm', '<=', $gsmMax);
             })
             ->latest()
-            ->paginate(12)
-            ->withQueryString();
+            ->get();
 
         return Inertia::render('Catalog/Index', [
             'products' => $products,
