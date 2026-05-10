@@ -1,58 +1,94 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Mitra Abadi - Textile Archive Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Mitra Abadi adalah platform manajemen arsip digital dan inventaris tekstil yang dirancang untuk mengelola spesimen kain, memantau stok, serta mencatat pesanan secara efisien. Proyek ini mengintegrasikan kemudahan manajemen backend Laravel dengan antarmuka frontend React yang modern dan reaktif melalui Inertia.js.
 
-## About Laravel
+## 🚀 Teknologi Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Backend**: Laravel 12 (PHP 8.2+)
+- **Frontend**: React.js dengan Inertia.js
+- **Styling**: Tailwind CSS v4
+- **Database**: MySQL / MariaDB
+- **Icons**: Material Symbols Outlined (Google Fonts)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📋 Panduan Instalasi
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Ikuti langkah-langkah berikut untuk menjalankan proyek di mesin lokal Anda:
 
-## Learning Laravel
+### 1. Persiapan Awal
+Pastikan Anda sudah menginstal **PHP (8.2+)**, **Composer**, **Node.js (18+)**, dan server database (seperti MySQL).
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
+### 2. Klon Repositori
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/username/mitra-abadi.git
+cd mitra-abadi
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 3. Instal Dependensi Backend (Composer)
+```bash
+composer install
+```
 
-## Contributing
+### 4. Instal Dependensi Frontend (NPM)
+```bash
+npm install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 5. Konfigurasi Lingkungan (.env)
+Salin file `.env.example` menjadi `.env` dan sesuaikan pengaturan database Anda.
+```bash
+cp .env.example .env
+```
+*Buka file `.env` dan isi bagian `DB_DATABASE`, `DB_USERNAME`, dan `DB_PASSWORD` sesuai database lokal Anda.*
 
-## Code of Conduct
+### 6. Generate Application Key
+```bash
+php artisan key:generate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 7. Migrasi & Seeding Database
+Jalankan perintah ini untuk membuat tabel dan mengisi data awal (termasuk akun admin dan contoh katalog produk).
+```bash
+php artisan migrate --seed
+```
 
-## Security Vulnerabilities
+### 8. Hubungkan Storage
+Untuk mendukung fitur upload gambar produk:
+```bash
+php artisan storage:link
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 9. Jalankan Proyek
+Buka **dua terminal** berbeda untuk menjalankan server Laravel dan compiler Vite:
 
-## License
+**Terminal 1 (Laravel Server):**
+```bash
+php artisan serve
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**Terminal 2 (Vite Compiler):**
+```bash
+npm run dev
+```
+
+Akses aplikasi melalui: `http://127.0.0.1:8000`
+
+---
+
+## 🔐 Akses Admin (Default)
+
+Setelah melakukan seeding, Anda dapat masuk ke Dashboard Admin menggunakan akun berikut:
+
+- **URL**: `http://127.0.0.1:8000/login`
+- **Email**: `admin@mitraabadi.com` (atau email yang diset di DatabaseSeeder)
+- **Password**: `password`
+
+## ✨ Fitur Utama
+
+- **Catalog Explorer**: Etalase produk dengan filter kategori dan pencarian dinamis.
+- **Specimen Archive**: Pendataan detail teknis kain (GSM, Komposisi, Lebar, dll).
+- **Inventory Tracking**: Monitoring stok per roll dengan notifikasi stok menipis.
+- **Manual Order Entry**: Pencatatan pesanan langsung (POS Style) untuk admin.
+- **Admin Dashboard**: Visualisasi ringkas mengenai total penjualan dan status operasional.
+
+---
+© 2026 Mitra Abadi Development Team
